@@ -1,0 +1,443 @@
+.LandingSection{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.landing_container{
+    width: var(--container-width-lg);
+    height: 84%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.landing_box{
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landing_logo {
+    width: 6.7rem;
+}
+
+.logo_head {
+    text-align: center;
+    line-height: 1.7rem;
+    margin: 6px;
+    color: var(--color-hover-gray);
+}
+
+.logo_head h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 6px;
+}
+
+.logo_head h4 {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.main_heading {
+    font-size: 4rem;
+    color: var(--color-primary-white);
+    /* box-sizing: border-box;
+    border-left: 1.2rem solid var(--color-primary);
+    padding-left: 1rem; */
+}
+
+.head_tag {
+    color: var(--color-primary-head);
+    font-size: 1rem;
+    font-weight: 10;
+}
+
+.head_tag span {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.landing_btn {
+    padding: 1.3rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 0.7rem;
+}
+
+
+.btn-primary {
+    font-size: 1rem;
+}
+
+
+
+
+.wave_container{
+    padding: 0;
+    width: 100%;
+    height: 16%;
+    position: relative;
+}
+
+#waveSection{
+    width: 100%;
+    height: 100%;
+}
+
+#waveSection .wave {
+    position: absolute;
+    background: url(../media/images/wave.png);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5.4rem;
+    background-size: 100% 5.4rem;
+}
+
+#waveSection .wave.wave1{
+    animation: animate 15s linear infinite;
+    z-index: 9;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+#waveSection .wave.wave2{
+    animation: animate2 8s linear infinite;
+    z-index: 8;
+    opacity: 0.5;
+    animation-delay: -10s;
+    bottom: 10px;
+}
+
+#waveSection .wave.wave3{
+    animation: animate2 8s linear infinite;
+    z-index: 7;
+    opacity: 0.3;
+    animation-delay: -8s;
+    bottom: 15px;
+}
+
+#waveSection .wave.wave4{
+    animation: animate2 6s linear infinite;
+    z-index: 6;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+
+/* Animation Keyframe */
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 4000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 4000px;
+    }
+
+}
+
+@keyframes animate3 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 4000px;
+    }
+
+}
+
+@keyframes animate4 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 4000px;
+    }
+
+}
+
+
+
+
+.info_sec{
+    width: 100%;
+    height: fit-content;
+    padding: 1.3rem 0 2.7rem;
+    /* background-color: var(--color-primary-head); */
+    background-color: var(--color-primary-white) ;
+}
+
+.info_container {
+    width: var(--container-width-lg);
+    /* background-color: aquamarine; */
+    height: 100%;    
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_head {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+}
+
+.info_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info_img img{
+    width: 200px;
+    height: 250px;
+    border-radius: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Schedule_container{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-primary-white);
+    /* -webkit-box-shadow: inset -3px -32px 300px -80px rgba(0,0,0,0.54);
+    -moz-box-shadow: inset -3px -32px 300px -80px rgba(0,0,0,0.54);
+    box-shadow: inset -3px -32px 300px -80px rgba(0,0,0,0.54); */
+    display: flex;
+}
+
+.campsite_section {
+    width: 100%;
+    height: 80vh;
+    background-color: var(--color-primary-white);
+}
+
+
+.campsite_main {
+    width: 100%;
+    height: 60vh;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    /* justify-content: center; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.camp_card_container {
+    min-width: 222px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.site_card {
+    min-width: 222px;
+    height: 300px;
+    background-color: var(--color-primary-white);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.camp_card_img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* transition: var(--transition); */
+    transition: transform 0.75s;
+
+}
+
+.site_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0px -70px 21px -14px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0px -70px 21px -14px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: inset 0px -70px 21px -14px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+
+.camp_card_container:hover .camp_card_img {
+    transform: scale(1.05);
+    opacity: 1;
+
+}
+
+.card_rating_div {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    z-index: 2;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.card_rating_div span {
+    padding-left: 6px;
+    color: white;
+    font-weight: lighter;
+    font-size: 10px;
+    color: var(--color-hover-gray);
+}
+
+.rating_star {
+    color:  #FFC300;
+}
+
+.fev_heart {
+    color: #E62851;
+}
+
+.card_footer {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    padding: 6px;
+}
+
+.card_footer h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color:var(--color-primary-head);
+}
+
+.card_footer_sec {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding-top: 0.5rem;
+    align-items: center;
+    font-size: 12px;
+}
+
+
+.btn-booking {
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 6px;
+}
+
+.card_max_price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.card_max_price span {
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.card_max_price p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.camp_photo_section {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-primary-white);
+}
+
+.camp_photo_container {
+    height: 100%;
+}
+
+
+.photo_sec_container {
+    width: 100%;
+    height: 100%;
+    justify-self: start;
+}
+
+.photo_sec_inner {
+    width: 100%;
+    height: 90%;
+    background-color: #E62851;
+    display: flex;
+}
+
+.photo_grid {
+    height: 100%;
+    width: 40%;
+    background-color: aqua;
+    display: flex;
+    gap: 6px;
+    flex-wrap:wrap;
+}
+
+
+.photo_items {
+    width: 120px;
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.photo_banner {
+    height: 100%;
+    width: 60%;
+    background-color: #FFC300;
+}
+
+
