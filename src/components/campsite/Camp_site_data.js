@@ -1,6 +1,4 @@
 
-
-
 import camp_a from '../../media/images/camp-a.jpeg'
 import camp_b from '../../media/images/camp-b.jpeg'
 import camp_c from '../../media/images/camp-c.jpg'

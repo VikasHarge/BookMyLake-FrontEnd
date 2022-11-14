@@ -5,20 +5,35 @@ import InfoSection from '../components/info_section/InfoSection'
 import ScheduleSection from '../components/schedule/ScheduleSection'
 import CampSiteSection from '../components/campsite/CampSiteSection'
 import CampPhotoSection from '../components/campphotosec/CampPhotoSection'
+import { photoObj } from '../components/context/PhotoContext'
+import { photoContext } from '../components/context/PhotoContext'
+import { Fade } from "react-awesome-reveal";
+
+
 
 const Home = () => {
   return (
     <>
       <LandingSection/>
-      <InfoSection />
+      <div className='background_white' >
+      <Fade direction='up' triggerOnce={true} fraction={0.3} >
+        <InfoSection />
+      </Fade>
+      <Fade direction='up' triggerOnce={true} fraction={0} >
       <ScheduleSection />
+      </Fade>
+      <Fade direction='up' triggerOnce={true} fraction={0} >
       <CampSiteSection />
-      <CampSiteSection />
-      <CampSiteSection />
-      <CampSiteSection />
-      <CampPhotoSection/>
+      </Fade>
+
+      <Fade direction='up' triggerOnce={true} fraction={0} >
+      <photoContext.Provider value={photoObj} >
+        <CampPhotoSection/>
+      </photoContext.Provider>
+      </Fade>
+      </div>
+
     </>
-    
   )
 }
 

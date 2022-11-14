@@ -57,7 +57,7 @@ export const navMenu = [
     {
         id : 7,
         title : "Accout",
-        path : "./user",
+        path : "./user-login",
         icon : <BsFillPersonFill/>,
         className : "nav_item",
         isIcon : true
@@ -116,7 +116,7 @@ export const campDrop = [
         title : "Camp C - Love Nest",
         path : './campSiteDetails',
         icon : <RiHeartsFill/>,
-        className : "nav_drop_item"
+        className : "nav_drop_item love"
     },
     {
         id : 16, 

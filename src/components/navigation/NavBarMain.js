@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,} from "react-router-dom";
 import { navMenu, galleryDrop, campDrop } from "./NavItems";
 import NavDropDown from "./NavDropDown.js";
 
@@ -16,32 +16,40 @@ const NavBarMain = () => {
           {navMenu.map((item, i) => {
             if (item.isIcon === true) {
               return (
-                <li key={item.id} className={item.className}>
-                  <Link to={item.path}>{item.icon}</Link>
+                <Link key={item.id} to={item.path}>
+                <li  className={item.className}>
+                <p>{item.icon}</p>
                 </li>
+                </Link>
               );
             } else if(item.title === "Gallery") {
               return (
-                <li key={item.id} className={item.className} onMouseEnter={()=> setShowGalDrop(true)} onMouseLeave={()=> setShowGalDrop(false)}  >
-                  <a>{item.icon}</a>
-                  <Link to={item.path}>{item.title}</Link>
+                <Link key={item.id} to={item.path}>
+                <li  className={item.className} onMouseEnter={()=> setShowGalDrop(true)} onMouseLeave={()=> setShowGalDrop(false)}  >
+                  <p>{item.icon}</p>
+                  <p>{item.title}</p>
                   { showGalDrop && <NavDropDown dropDownObj = {galleryDrop} />}
                 </li>
+                </Link>
               );
             } else if(item.title === "Camp Sites") {
               return (
-                <li key={item.id} className={item.className} onMouseEnter={()=> setShowCampDrop(true)} onMouseLeave={()=> setShowCampDrop(false)} >
-                  <a>{item.icon}</a>
-                  <Link to={item.path}>{item.title}</Link>
+                <Link key={item.id} to={item.path}>
+                <li   className={item.className} onMouseEnter={()=> setShowCampDrop(true)} onMouseLeave={()=> setShowCampDrop(false)} >
+                  <p>{item.icon}</p>
+                  <p>{item.title}</p>
                   { showCampDrop && <NavDropDown dropDownObj = {campDrop} />}
                 </li>
+                </Link>
               );
             } else {
               return (
-                <li key={item.id} className={item.className}>
-                  <a>{item.icon}</a>
-                  <Link to={item.path}>{item.title}</Link>
+                <Link key={item.id} to={item.path}>
+                <li  className={item.className}>
+                  <p>{item.icon}</p>
+                  <p>{item.title}</p>
                 </li>
+                </Link>
               );
             }
           })}

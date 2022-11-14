@@ -1,4 +1,6 @@
 import React from 'react'
+import BannerPhoto from './BannerPhoto'
+import LeftPhotoGrid from './LeftPhotoGrid'
 
 const CampPhotoSection = () => {
   return (
@@ -9,21 +11,8 @@ const CampPhotoSection = () => {
         </div>
         <div className='photo_sec_container make_center' >
           <div className='photo_sec_inner'>
-            <div className='photo_grid big' >
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-              <a className='photo_items' ></a>
-            </div>
-            <div className='photo_banner' >
-
-            </div>
-
+            <LeftPhotoGrid />
+            <BannerPhoto />
           </div>
         </div>
       </div>    
@@ -31,4 +20,4 @@ const CampPhotoSection = () => {
   )
 }
 
-export default CampPhotoSection
+export default React.memo(CampPhotoSection)

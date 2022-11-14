@@ -67,6 +67,15 @@
     padding: 2px;
     transition: var(--transition);
   }
+
+  .nav_item > p {
+    color: black;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding-left: 3px;
+
+  }
   
   .nav_first{
     border-radius: 10px 0 0 10px;
@@ -100,6 +109,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-top: 2px solid var(--color-secondary);
     transition: var(--transition);
+    
   }
   
   .dropdown_container li {
@@ -121,7 +131,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    /* transition: var(--transition); */
+    transition: var(--transition);
   }
   
   
@@ -149,5 +159,8 @@
     display: none;
   }
   
+  .love a {
+    color: var(--color-pink) !important;
+  }
   
   

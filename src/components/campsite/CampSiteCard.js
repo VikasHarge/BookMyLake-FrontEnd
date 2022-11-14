@@ -6,6 +6,10 @@ const CampSiteCard = ({ data }) => {
 
   const [fev, setFev] = useState(false)
 
+  const addToFev = ()=>{
+    setFev(!fev)
+    alert(data.camp_name)
+  }
 
   return (
     <div className="camp_card_container" >
@@ -15,7 +19,7 @@ const CampSiteCard = ({ data }) => {
           <a className="rating_star" >{<BsStarFill/>}<span>{data.reviews}</span></a>
           <a 
             className="fev_heart" 
-            onClick={()=> setFev(!fev)}
+            onClick={addToFev}
           >{ fev ? <BsHeartFill/> : <BsHeart />}</a>
         </div>
       </div>
