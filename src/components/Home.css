@@ -74,6 +74,13 @@
     font-weight: 600;
 }
 
+.head_tag small {
+    color: var(--color-primary-head);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+
 .landing_btn {
     padding: 1.3rem;
     display: grid;

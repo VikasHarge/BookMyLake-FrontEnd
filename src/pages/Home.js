@@ -25,12 +25,23 @@ const Home = () => {
       <Fade direction='up' triggerOnce={true} fraction={0} >
       <CampSiteSection />
       </Fade>
-
+      <Fade  direction='up' triggerOnce={true} fraction={0} >
+      <CampSiteSection />
+      </Fade>
+      <Fade direction='up' triggerOnce={true} fraction={0} >
+      <CampSiteSection />
+      </Fade>
       <Fade direction='up' triggerOnce={true} fraction={0} >
       <photoContext.Provider value={photoObj} >
         <CampPhotoSection/>
       </photoContext.Provider>
       </Fade>
+      <photoContext.Provider value={photoObj} >
+        <CampPhotoSection/>
+      </photoContext.Provider>
+      <photoContext.Provider value={photoObj} >
+        <CampPhotoSection/>
+      </photoContext.Provider>
       </div>
 
     </>

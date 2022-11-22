@@ -1,10 +1,10 @@
 
 import { BiHomeHeart, BiPhotoAlbum, BiMessageAltDetail, BiMoviePlay } from "react-icons/bi";
 import { BsPatchCheckFill, BsCartCheck, BsFillPersonFill, BsSearch, BsFillCloudMoonFill } from "react-icons/bs";
-import { GiNightSleep, GiFallingStar, GiLovers, GiNestEggs, GiChainedHeart, GiMoonBats, GiStarFormation } from "react-icons/gi";
+import { GiNightSleep, GiFallingStar, GiMoonBats,  } from "react-icons/gi";
 import { FaCampground } from "react-icons/fa";
-import { RiHeartsFill } from "react-icons/ri";
-import { WiStars } from "react-icons/wi";
+import { RiHeartsFill, RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
+// import { WiStars } from "react-icons/wi";
 
 import { Md360 } from "react-icons/md";
 
@@ -24,14 +24,18 @@ export const navMenu = [
         title : "Gallery",
         path : "/gallery",
         icon : <BiPhotoAlbum/>,
-        className : "nav_item"
+        className : "nav_item",
+        dropArrow : <RiArrowDownSLine/>,
+        upArrow : <RiArrowUpSLine/>
     },
     {
         id : 3,
         title : "Camp Sites",
         path : "/campsites",
         icon : <FaCampground/>,
-        className : "nav_item"
+        className : "nav_item",
+        dropArrow : <RiArrowDownSLine/>,
+        upArrow : <RiArrowUpSLine/>
     },
     {
         id : 4,

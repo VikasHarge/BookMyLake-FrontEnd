@@ -28,6 +28,7 @@ const NavBarMain = () => {
                 <li  className={item.className} onMouseEnter={()=> setShowGalDrop(true)} onMouseLeave={()=> setShowGalDrop(false)}  >
                   <p>{item.icon}</p>
                   <p>{item.title}</p>
+                  <p>{showGalDrop ? item.upArrow : item.dropArrow}</p>
                   { showGalDrop && <NavDropDown dropDownObj = {galleryDrop} />}
                 </li>
                 </Link>
@@ -38,6 +39,7 @@ const NavBarMain = () => {
                 <li   className={item.className} onMouseEnter={()=> setShowCampDrop(true)} onMouseLeave={()=> setShowCampDrop(false)} >
                   <p>{item.icon}</p>
                   <p>{item.title}</p>
+                  <p>{showCampDrop ? item.upArrow : item.dropArrow}</p>
                   { showCampDrop && <NavDropDown dropDownObj = {campDrop} />}
                 </li>
                 </Link>

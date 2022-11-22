@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap');
 
 
-
 *{
   margin: 0;
   padding: 0;
@@ -16,6 +15,7 @@
   --color-primary : #FA6500;
   --color-primary-head : #244789;
   --color-secondary : #11DA00;
+  --color-secondary-dark : #148d09;
   --color-primary-white : #ffff;
   --color-primary-black : rgb(0, 0, 0);
   --color-hover-gray : #E0E0E0;
