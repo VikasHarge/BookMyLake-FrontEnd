@@ -11,7 +11,7 @@ const DashboardRouter = () => {
   return (
     <>
       <Helmet>
-        <title>BookMyLake | Admin</title>
+        <title>Admin | BookMyLake</title>
       </Helmet>
       <Routes>
         <Route path="" element={<Dashboard />}>

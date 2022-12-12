@@ -61,7 +61,7 @@ export const navMenu = [
     {
         id : 7,
         title : "Accout",
-        path : "./user-login",
+        path : "./pawna-25111997-dashboard/admin/dashboard",
         icon : <BsFillPersonFill/>,
         className : "nav_item",
         isIcon : true

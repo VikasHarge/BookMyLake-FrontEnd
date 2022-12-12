@@ -19,6 +19,7 @@ const StyledOverly = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 5s ease-in-out;
 `;
 const PopupDiv = styled.div`
   border-radius: 0.6rem;
@@ -71,13 +72,6 @@ const AddCampPopup = ({ setShowPopUp }) => {
   const [status, setStatus] = useState("active");
   const [images, setImages] = useState([]);
 
-  useEffect(() => {
-
-  }, [])
-  
-
-
-
 
 
 
@@ -87,7 +81,7 @@ const AddCampPopup = ({ setShowPopUp }) => {
         <PopupDiv className="popup">
           <HeadingDiv>
             <h1>Add New Camp Site</h1>
-            <StyledButton onClick={() => setShowPopUp(false)} bColor="red">
+            <StyledButton onClick={() => setShowPopUp(false)} color="red">
               Close
             </StyledButton>
           </HeadingDiv>
@@ -194,7 +188,7 @@ const AddCampPopup = ({ setShowPopUp }) => {
               >
               </StyledFileInput>
             </FileDiv>
-            <StyledSubmitButton>
+            <StyledSubmitButton onClick={(e)=>e.preventDefault()} >
               Submit
             </StyledSubmitButton>
             </FormInputLeft>

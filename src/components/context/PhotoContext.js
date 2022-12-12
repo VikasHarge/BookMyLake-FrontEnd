@@ -9,6 +9,7 @@ import banner from '../../media/gallery/banner.jpg'
 
 
 export const photoContext = React.createContext()
+
 export const photoObj = {
     img_1 : img_1,
     img_2 : img_2,
@@ -22,3 +23,5 @@ export const photoObj = {
     img_10 : img_4,
     banner : banner,
 }
+
+export const imgArr = [img_1, img_2, img_3, img_4, img_5, img_6]

@@ -36,11 +36,9 @@ export const StyledLabel = styled.label`
     margin-bottom : 4px;
     color : var(--color-primary-head);
     font-weight : 600;
-
     span{
         font-size : 10px;
     }
-
 `
 
 export const RadioDiv = styled.div`
@@ -83,8 +81,6 @@ export const FileDiv = styled(RadioDiv)`
     justify-content: space-evenly;
     align-content: normal;
     flex-direction: column;
-    
- 
     &:focus-within{
         border : 1px dashed var(--color-primary-head);
     }
@@ -95,7 +91,6 @@ export const FileDiv = styled(RadioDiv)`
         align-items : center;
         height : 50px;
     }
-
 `
 
 

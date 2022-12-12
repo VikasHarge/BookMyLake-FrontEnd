@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom"
 import { BsHeart, BsHeartFill, BsStarFill } from "react-icons/bs";
+import camp_a from "../../media/images/camp-a.jpeg";
+import camp_b from "../../media/images/camp-b.jpeg";
+import camp_c from "../../media/images/camp-c.jpg";
+import camp_d from "../../media/images/camp-d.jpeg";
 
 
 const CampSiteCard = ({ data }) => {
@@ -14,9 +19,9 @@ const CampSiteCard = ({ data }) => {
   return (
     <div className="camp_card_container" >
       <div className="site_card">
-        <img src={data.img} alt="" className="camp_card_img"></img>
+        <img src={camp_a} alt={data.camp_name} className="camp_card_img"></img>
         <div className="card_rating_div">
-          <a className="rating_star" >{<BsStarFill/>}<span>{data.reviews}</span></a>
+          <a className="rating_star" >{<BsStarFill/>}<span>({data.numOfReviews}) Reviews</span></a>
           <a 
             className="fev_heart" 
             onClick={addToFev}
@@ -26,12 +31,12 @@ const CampSiteCard = ({ data }) => {
       <div className="card_footer" >
         <h4>{data.camp_name}</h4>
         <div className="card_footer_sec " >
-          <div className="card_max_price" ><span>{data.max_price}</span><p>{data.sale_price}</p></div>
-          <button className="btn btn-booking" >Book</button>
+          <div className="card_max_price" ><span>{`₹ ${data.max_price} `}</span><p>{`₹ ${data.sale_price}`}</p></div>
+          <Link to={`/campsites/${data._id}`} className="btn btn-booking" >Book</Link>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
 
-export default CampSiteCard;
+export default React.memo(CampSiteCard);

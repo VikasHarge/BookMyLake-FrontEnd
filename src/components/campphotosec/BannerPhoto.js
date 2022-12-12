@@ -3,7 +3,7 @@ import { photoContext } from "../context/PhotoContext";
 
 const BannerPhoto = () => {
 
-    const photoObj = useContext(photoContext)
+    const {photoObj} = useContext(photoContext)
 
   return (
                 

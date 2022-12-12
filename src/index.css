@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap');
 
-
 *{
   margin: 0;
   padding: 0;
@@ -25,7 +24,6 @@
   --color-button-2 : #FA6500;
   --color-button-2-hover : #c75000;
   --color-pink : #E62851;
-
 
   /* font */
   --font-family-primary : 'Inter', sans-serif;

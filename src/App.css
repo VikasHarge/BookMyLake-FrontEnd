@@ -1,0 +1,10 @@
+
+.MuiPickersPopper-root{
+    position: fixed !important;
+    top:10rem !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important;
+    width: max-content;
+}

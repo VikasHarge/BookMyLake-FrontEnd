@@ -1,3 +1,4 @@
+
 .LandingSection{
     width: 100%;
     height: 100vh;
@@ -239,9 +240,6 @@
 }
 
 
-
-
-
 .Schedule_container{
     width: 100%;
     height: 100vh;
@@ -252,12 +250,18 @@
     display: flex;
 }
 
+.page_container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-hover-gray);
+    display: flex;
+}
+
 .campsite_section {
     width: 100%;
     height: 80vh;
     background-color: var(--color-primary-white);
 }
-
 
 .campsite_main {
     width: 100%;
