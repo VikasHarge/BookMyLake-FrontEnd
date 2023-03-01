@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const initialState = {
   loading: false,
   isAuthenticated: false,
-  userData: {},
+  userData: null,
   error: "",
 };
 
@@ -28,7 +28,7 @@ export const loginPost = createAsyncThunk(
         withCredentials: true,
       }
     ).catch(err =>{
-      toast.error(err.response.data.error)
+      toast.error(err.response.data.message)
     }) ;
     return res.data;
   }
@@ -51,7 +51,7 @@ export const registerPost = createAsyncThunk(
       registerForm,
       config
     ).catch(err=>{
-      toast.error(err.response.data.error)
+      toast.error(err.response.data.message)
     });
 
     return data;
@@ -78,7 +78,7 @@ export const loadUser = createAsyncThunk("userData/loaduser", async () => {
     },
     withCredentials: true,
   }).catch(err =>{
-    toast.error(err.response.data.error)
+    toast.error(err.response.data.message)
   });
   return data;
 });
