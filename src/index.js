@@ -14,16 +14,16 @@ import {persistStore} from "redux-persist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-let persistor = persistStore(store)
+// let persistor = persistStore(store)
 
 root.render(
 
     <Provider store={store} >
       <BrowserRouter>
       <ScrollToTop/>
-        <PersistGate persistor={persistor} >
+        {/* <PersistGate persistor={persistor} > */}
           <App />
-        </PersistGate>
+        {/* </PersistGate> */}
       </BrowserRouter>
     </Provider>
 );

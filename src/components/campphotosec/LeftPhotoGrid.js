@@ -5,8 +5,6 @@ import { photoContext } from "../context/PhotoContext";
 const LeftPhotoGrid = () => {
 
     const {photoObj} = useContext(photoContext)
-    console.log(photoObj.img_1);
-
 
   return (
     <div className="photo_grid">

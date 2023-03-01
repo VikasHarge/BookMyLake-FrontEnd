@@ -1,8 +1,15 @@
 import React from 'react'
+import { StyledFooterContainer } from './utils/FooterStyled'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+    <StyledFooterContainer
+      height="70vh"
+    >
+
+    </StyledFooterContainer>
+    </>
   )
 }
 

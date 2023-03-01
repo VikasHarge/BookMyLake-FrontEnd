@@ -20,7 +20,7 @@ export const StyledContainer = styled.div`
   background-color : ${(props) => props.backgroundColor || ""};
   /* border : 1px solid #ffff; */
   display : grid;
-  grid-template-columns : 69% 29%;
+  grid-template-columns : ${props=>props.gridTemCol || '69% 29%'};
   gap : 2%;
   padding : 1.5rem 0;
   transition: all 0.3s ease-in-out;
@@ -35,7 +35,6 @@ export const StyledDetailContainer = styled.div`
     padding: 1rem;
     gap : 1rem;
     transition: all 0.3s ease-in-out;
-
 `
 export const StyledCarouselContainer =styled.div`
     display : grid;
@@ -55,6 +54,7 @@ export const StyledInfoDiv = styled.div`
     border-radius : 0.5rem;
     padding : ${(props)=> props.padding || "1rem"};
 `
+
 export const StyledWhiteContainer = styled.div`
     width : 100%;
     height : ${(props)=> props.height || "max-content" } ;
@@ -63,9 +63,10 @@ export const StyledWhiteContainer = styled.div`
     margin : ${(props)=> props.margin || "0 0 0.5rem 0"};
     padding : ${(props)=> props.padding || "1rem" } ;
     display : flex;
-    justify-content : ${(props)=> props.justifyContent || ""} ;
+    flex-direction : ${(props)=>props.flexDirection || ""};
+    justify-content : ${(props)=> props.justifyContent || ""};
     align-items :${(props)=> props.alignItems || ""};
-    gap: 8px;
+    gap: ${(props)=>props.gap || "8px"};
     font-size : 1.2rem;
     color : var(--color-primary);
 
@@ -74,7 +75,6 @@ export const StyledWhiteContainer = styled.div`
         font-size : 0.7rem;
         font-weight : 600;
     }
-
     .reviewsContainer{
         display : flex;
         align-items : flex-end;
@@ -82,6 +82,19 @@ export const StyledWhiteContainer = styled.div`
     }
     .numOfReviews{
         font-size : 0.8rem;
+    }
+`
+
+export const StyledImg = styled.img`
+    width : ${(props)=>props.width || "6rem"};
+    height : ${(props)=>props.height || "6rem"};
+    border-radius : ${(props)=>props.borderRadius || ""};
+    padding : ${props=>props.padding || ''};
+    margin : 0 auto;
+    scale : 0.98;
+    transition : all 0.3s;
+    &:hover{
+        scale : 1;
     }
 `
 
@@ -178,7 +191,7 @@ export const StyledPopupCard = styled.div`
     height : max-content;
     margin-left : 1rem;
     left : 0;
-    bottom : 3rem;
+    bottom :${(props)=>props.bottom || "3rem"};
     border-radius : 0.5rem;
     background-color : ${(props)=> props.backgroundColor || "#ffff"};
 
@@ -222,19 +235,14 @@ export const StyledDotedBox = styled.div`
     font-size : 1.2rem;
     color : var(--color-primary);
     box-sizing : border-box;
-    border : none;
-    border-top : 2px solid gray;
-    border-top-style : dashed;
-
+    border-top : 2px dashed gray;
 
     .totalPriseContainer{
         display : flex;
         flex-direction : row;
         justify-content : space-between;
-        align-items : center
-
+        align-items : center;
     }
-
 `
 
 export const StyledTitleDiv = styled.div`
@@ -244,6 +252,42 @@ export const StyledTitleDiv = styled.div`
     font-weight : ${(props)=>props.fontWeight || "500"};
     font-size : ${(props)=>props.fontSize || "1rem"};
 
-    
+    p {
+        font-size : 0.8rem;
+        margin-bottom : 2px;
+        color : #244789 !important;
+    };
+    h1 {
+        margin-bottom : 9px;
+        font-size : ${props=>props.fontSizeH1 || '1.3rem'};
+        background-color : #f7decc;
+        border-radius : 6px;
+        padding : 6px 8px;
+    }
+
 `
 
+export const StyledBorderDiv = styled.div`
+
+    display : flex;
+    flex-direction : ${(props)=>props.flexDirection || "column"};
+    align-items : flex-start;
+    /* justify-content : space-evenly; */
+    width : 100%;
+    min-height : max-content;
+    border : 1px dashed grey;
+    border-radius : 0.6rem;
+    padding : 6px;
+    margin: ${(props)=>props.margin || "0"};
+    transition: all 0.3s ease-in-out;
+    gap : 0.6rem;
+    &:focus-within{
+        border : 1px dashed var(--color-primary-head);
+    }
+    .advancedInfoDiv{
+        width : 100%;
+        display : flex;
+        flex-direction : row;
+        justify-content : space-between !important;
+    }
+`

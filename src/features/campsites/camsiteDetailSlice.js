@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const initialState = {
     loading : false,
-    campsiteDetails : {},
+    campsiteDetails : null,
     error : ''
 }
 

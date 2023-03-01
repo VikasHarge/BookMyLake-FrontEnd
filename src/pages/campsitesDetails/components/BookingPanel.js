@@ -9,11 +9,20 @@ import {
   StyledWhiteContainer,
   StyledHeadingDiv,
   StyledTitleDiv,
-  StyledDotedBox
+  StyledDotedBox,
+  StyledBorderDiv,
 } from "../../../StyledComponents/containers/Containers";
 import { StyledOffBtn } from "../../../StyledComponents/util/StyledUtils";
 import Loader from "../../../utility/Loader";
-import { StyledButton, StyledSubmitButton } from "../../../MainSite/dashboard-components/StyledComponents/Button/Button";
+import {
+  StyledButton,
+  StyledSubmitButton,
+} from "../../../MainSite/dashboard-components/StyledComponents/Button/Button";
+import {
+  RadioDiv,
+  StyledInputRadio,
+  StyledLabelRadio,
+} from "../../../MainSite/dashboard-components/StyledComponents/input/Form";
 
 const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
   let month = [
@@ -34,20 +43,47 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
   const [adultNum, setAdultNum] = useState(1);
   const [childrenNum, setChildrenNum] = useState(0);
   const [showGuestSelector, setShowGuestSelector] = useState(false);
-  const [totalPrise, setTotalPrise] = useState(campsiteDetails.campSite.sale_price)
+  const [paymentType, setPaymentType] = useState("full");
+  const [totalPrise, setTotalPrise] = useState(
+    campsiteDetails.campSite.sale_price
+  );
 
-  const salePrise = campsiteDetails.campSite.sale_price;
+  const [advanceAmount, setAdvancedAMount] = useState(0)
+  const [payingAmount, setPayingAmount] = useState(0)
+
+
+  const salePrise = Math.round(campsiteDetails.campSite.sale_price);
+
+  useEffect(() => {
+    setTotalPrise((totalPrise) => {
+      return (totalPrise =
+        adultNum * campsiteDetails.campSite.sale_price +
+        childrenNum * campsiteDetails.campSite.sale_price);
+    });
+  }, [adultNum, campsiteDetails.campSite.sale_price, childrenNum]);
 
   useEffect(()=>{
 
-    setTotalPrise((totalPrise)=>{
-      return totalPrise = ((adultNum*campsiteDetails.campSite.sale_price)+(childrenNum*campsiteDetails.campSite.sale_price))
+    setAdvancedAMount((advanceAmount)=>{
+
+      return advanceAmount = Math.round(totalPrise*0.35)
+
     })
 
+  },[totalPrise])
 
-  },[adultNum, campsiteDetails.campSite.sale_price, childrenNum])
+  useEffect(()=>{
+    if(paymentType === 'advance'){
+      setPayingAmount((payingAmount)=>Math.round(advanceAmount))
+    } else if(paymentType === 'full') {
+      setPayingAmount((payingAmount)=>totalPrise)
+    }
+  },[payingAmount, paymentType, totalPrise])
 
-  console.log("booking runs");
+  const changePaymentType = (e) => {
+    setPaymentType(e.target.value);
+  };
+
 
   return (
     <>
@@ -124,40 +160,107 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
                         childrenNum,
                         setChildrenNum,
                         setShowGuestSelector,
-                        salePrise
+                        salePrise,
                       }}
                     ></PopupCard>
                   )}
                 </div>
-                <div className="selectedInfo"> {`${adultNum > 1 ? adultNum+" Adults," : adultNum+" Adult,"}  ${childrenNum > 1 ? childrenNum+" Childrens." : childrenNum+" Children."}`}</div>
+                <div className="selectedInfo">
+                  {" "}
+                  {`${
+                    adultNum > 1 ? adultNum + " Adults," : adultNum + " Adult,"
+                  }  ${
+                    childrenNum > 1
+                      ? childrenNum + " Childrens."
+                      : childrenNum + " Children."
+                  }`}
+                </div>
               </div>
             </div>
           </StyledBookingInfoDiv>
 
-          <StyledWhiteContainer
-            padding = "1rem 0 0 0"
-            margin = "0"
-          >
+          <RadioDiv margin="0">
+            <div className="radioInputContainer">
+              <StyledInputRadio
+                type="radio"
+                id="full"
+                name="payment"
+                value="full"
+                checked={paymentType === "full"}
+                onChange={changePaymentType}
+              />
+              <StyledLabelRadio htmlFor="advance">Pay Full</StyledLabelRadio>
+            </div>
+
+            <div className="radioInputContainer">
+              <StyledInputRadio
+                type="radio"
+                id="advance"
+                name="payment"
+                value="advance"
+                checked={paymentType === "advance"}
+                onChange={changePaymentType}
+              />
+              <StyledLabelRadio htmlFor="advance">
+                Pay Advace (35%)
+              </StyledLabelRadio>
+            </div>
+          </RadioDiv>
+
+          <StyledWhiteContainer padding="1rem 0 0 0" margin="0">
             <StyledDotedBox>
-              <div className="totalPriseContainer" >
-              <StyledTitleDiv
-                fontSize="1.1rem"
-                color="gray"
-                fontWeight="600"
-              >Total Price</StyledTitleDiv>
-              <StyledTitleDiv
-                fontSize="1.6rem"
-                color="var(--color-primary)"
-                fontWeight="700"
-              >
-                {`₹ ${totalPrise}/-`}
-              </StyledTitleDiv>
+              <div className="totalPriseContainer">
+                <StyledTitleDiv fontSize="1.1rem" color="gray" fontWeight="600">
+                  Total Price
+                </StyledTitleDiv>
+                <StyledTitleDiv
+                  fontSize="1.6rem"
+                  color="var(--color-primary)"
+                  fontWeight="700"
+                >
+                  {`₹ ${totalPrise}/-`}
+                </StyledTitleDiv>
               </div>
-              <StyledSubmitButton 
-                fontSize ="1rem"
-              >
-                Book Now
-              </StyledSubmitButton>
+
+
+              { paymentType === 'advance' && (
+                <StyledBorderDiv 
+                  
+                >
+
+                  <div className="advancedInfoDiv" >
+                    <StyledTitleDiv fontSize="1rem" color="gray" fontWeight="600">
+                      Pay Advance Now :-
+                    </StyledTitleDiv>
+
+                    <StyledTitleDiv
+                      fontSize="1rem"
+                      color="var(--color-primary)"
+                      fontWeight="600"
+                    >
+                      {`₹ ${advanceAmount}/-`}
+                    </StyledTitleDiv>
+                  </div>
+
+
+                  <div className="advancedInfoDiv" >
+                  <StyledTitleDiv fontSize="0.8rem" color="gray" fontWeight="600">
+                    Pay Remaining at Check-in :-
+                  </StyledTitleDiv>
+
+                  <StyledTitleDiv
+                    fontSize="0.8rem"
+                    color="var(--color-primary)"
+                    fontWeight="600"
+                  >
+                    {`₹ ${totalPrise-advanceAmount}/-`}
+                  </StyledTitleDiv>
+                  </div>
+                  
+                </StyledBorderDiv>
+              )}
+
+              <StyledSubmitButton fontSize="1rem">Book Now</StyledSubmitButton>
             </StyledDotedBox>
           </StyledWhiteContainer>
         </StyledBookingContainer>

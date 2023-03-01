@@ -5,12 +5,11 @@ import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { StyledSubmitButton, StyledButton } from '../../../MainSite/dashboard-components/StyledComponents/Button/Button';
+import { StyledButton } from '../../../MainSite/dashboard-components/StyledComponents/Button/Button';
 
 export default function BasicDatePicker({value, setValue}) {
     const [isForcePickerOpen, setIsOpen] = useState(false);
 
-    console.log("Date picker runs");
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs} > 
@@ -19,7 +18,7 @@ export default function BasicDatePicker({value, setValue}) {
         onClose={() => setIsOpen(false)}
         label="Basic example"
         value={value}
-        minDate={Date.now()}
+        minDate={Date.now()+1*24*60*60*1000}
         maxDate={Date.now()+25*24*60*60*1000}
         onChange={(newValue) => {
           setValue(newValue);

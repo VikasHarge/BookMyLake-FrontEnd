@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     position: fixed;
-    z-index: 999;
+    z-index: 7;
   }
   
   .nav_box{
@@ -23,6 +23,10 @@
     justify-content: center;
     align-items: center;
     transition: var(--transition);
+  }
+
+  .nav_logo:hover {
+    cursor: pointer;
   }
   
   .nav_logo img{

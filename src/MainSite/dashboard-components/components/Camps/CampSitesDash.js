@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import "./Camps.scss";
 import Table from "./Table";
 import AddCampPopup from "./AddCampPopup";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -23,7 +22,6 @@ const CampSitesDash = () => {
         </div>
         <Table />
       </div>
-      <ToastContainer/>
       {
         showPopUp && <AddCampPopup setShowPopUp={setShowPopUp} />
       }

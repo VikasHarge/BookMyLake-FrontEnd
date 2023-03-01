@@ -61,7 +61,7 @@ export const navMenu = [
     {
         id : 7,
         title : "Accout",
-        path : "./pawna-25111997-dashboard/admin/dashboard",
+        path : "./login",
         icon : <BsFillPersonFill/>,
         className : "nav_item",
         isIcon : true
@@ -75,6 +75,9 @@ export const navMenu = [
         isIcon : true
     },
 ]
+
+
+//Gallery Dropdowns
 
 export const galleryDrop = [
     {
@@ -100,6 +103,8 @@ export const galleryDrop = [
     },
 ]
 
+
+//Camps Dropdowns
 export const campDrop = [
     {
         id : 13, 
@@ -137,6 +142,26 @@ export const campDrop = [
         className : "nav_drop_last nav_drop_item"
     },
     
+]
+
+
+//Account Dropdowns
+
+export const accountDrop = [
+    {
+        id : 18, 
+        title : "My Account",
+        path : './account',
+        icon : <GiMoonBats/>,
+        className : "nav_drop_first nav_drop_item"
+    },
+    {
+        id : 18, 
+        title : "Logout",
+        path : './logout',
+        icon : <GiMoonBats/>,
+        className : "nav_drop_last nav_drop_item"
+    },
 ]
 
 

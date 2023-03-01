@@ -10,14 +10,18 @@ import { photoContext } from '../components/context/PhotoContext'
 import { Fade } from "react-awesome-reveal";
 import MetaData from '../components/metadata/MetaData'
 import { fetchCampSiteData2 } from '../features/campsites/campsiteSlice'
+import ScrollToTop from '../utility/ScrollToTop'
 
 
 
 const Home = () => {
 
+
+
   return (
     <>
     <MetaData title="Home | Pawna | BookMyLake" ></MetaData>
+      <ScrollToTop />
       <LandingSection/>
       <div className='background_white' >
       <Fade direction='up' triggerOnce={true} fraction={0.3} >
@@ -28,6 +32,7 @@ const Home = () => {
       </Fade>
       <Fade direction='up' triggerOnce={true} fraction={0} >
       <CampSiteSection />
+      
       </Fade>
       <Fade direction='up' triggerOnce={true} fraction={0} >
       <photoContext.Provider value={{photoObj}}  >

@@ -4,6 +4,7 @@ import { useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampSiteData } from "../../features/campsites/campsiteSlice";
 import Loader from "../../utility/Loader";
+import { fetchCampsiteDetails } from "../../features/campsites/camsiteDetailSlice";
 
 const CampSiteSection = () => {
   const { campsiteData, loading, error, campSiteCount } = useSelector(
@@ -13,8 +14,7 @@ const CampSiteSection = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("-------------runs------------");
-    dispatch(fetchCampSiteData());
+     dispatch(fetchCampSiteData());
   }, []);
 
   return (

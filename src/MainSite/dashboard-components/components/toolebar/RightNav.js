@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   Badge,
@@ -15,8 +15,15 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { Box } from "@mui/system";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../../features/users/userSlice";
+import { useNavigate } from "react-router-dom";
+import Loader from "../../../../utility/Loader";
 
 function notificationsLabel(count) {
+
+
+
   if (count === 0) {
     return "no notifications";
   }
@@ -26,27 +33,43 @@ function notificationsLabel(count) {
   return `${count} notifications`;
 }
 
-const settings = ["Profile", "Logout"];
 
 const RightNav = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const { error, loading, isAuthenticated, userData} = useSelector((state)=>state.userData)
+
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [lightTheme, setLightTheme] = useState(true);
 
   const handleOpenUserMenu = (e) => {
     setAnchorElUser(e.currentTarget);
-    console.log(e.currentTarget);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleLogout = ()=>{
+    dispatch(logout());
+    setAnchorElUser(null);
+  }
+
+  const handleProfile = ()=>{
+    navigate('/account')
+    setAnchorElUser(null);
+  }
+
+  const handleSelectMenu = () => {
     setAnchorElUser(null);
   };
+
 
   const changeTheme = () => {
     setLightTheme(!lightTheme);
   };
 
+
   return (
-    <header className="header_toolbar">
+    <>
+    { loading ? <Loader/> : <header className="header_toolbar">
       <div className="dash_heading" >Control Panel <span> {<KeyboardDoubleArrowRightIcon/>} </span> Pawna Lake</div>
       <div className="tool_div">
         <Tooltip title="Change Theme">
@@ -92,16 +115,22 @@ const RightNav = () => {
             horizontal: "right",
           }}
           open={Boolean(anchorElUser)}
-          onClose={handleCloseUserMenu}
+          onClose={handleSelectMenu}
         >
-          {settings.map((setting) => (
-            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">{setting}</Typography>
-            </MenuItem>
-          ))}
+
+        <MenuItem onClick={handleProfile}>
+          <Typography textAlign="center">Profile</Typography>
+        </MenuItem>
+
+        <MenuItem onClick={handleLogout}>
+          <Typography textAlign="center">Log Out</Typography>
+        </MenuItem>
+
         </Menu>
       </div>
-    </header>
+    </header> }
+    </>
+    
   );
 };
 

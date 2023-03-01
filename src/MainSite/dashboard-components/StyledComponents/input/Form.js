@@ -3,21 +3,26 @@ import styled from "styled-components"
 
 
 export const StyledInput = styled.input`
-    width : 90%;
-    height : 2rem;
+    width : ${(props)=>props.width || "100%"};
+    height : ${(props)=>props.height || "2rem"};
+    font-size : ${props=>props.fontSize || '1rem'};
+    font-weight : ${props=>props.fontWeight || 'auto'}; 
     margin-bottom : 1.3rem;
     outline-style : none;
     border : none;
-    border-bottom : 1.5px dashed gray;
+    border-bottom : ${(props)=>props.borderBottom || "1.5px dashed gray"};
     border-radius: 0.3rem;
-    padding : 6px 10px;
+    padding : ${(props)=>props.padding || "6px 10px"};
+    background-color : ${(props)=>props.backgroundColor || "#ffff"};
+    transition : all 0.3s;
     &:focus{
-        border-bottom : 1.5px dashed var(--color-primary);
+        border-bottom-color : var(--color-primary);
+        background-color : ${(props)=>props.backgroundColorFocus || ""};        
     }
 `
 
 export const StyledInputTextArea = styled.textarea`
-    width : 80%;
+    width : ${(props)=>props.width || "100%"};
     height : 2rem;
     margin-bottom : 1rem;
     outline-style : none;
@@ -25,6 +30,7 @@ export const StyledInputTextArea = styled.textarea`
     border-bottom : 1.5px dashed gray;
     border-radius: 0.3rem;
     padding : 6px 10px;
+    transition : all 0.3s;
     &:focus{
         border-bottom : 1.5px dashed var(--color-primary);
     }
@@ -32,10 +38,11 @@ export const StyledInputTextArea = styled.textarea`
 
 export const StyledLabel = styled.label`
     font-size : 14px;
-    padding-bottom : 6px;
-    margin-bottom : 4px;
+    margin : ${(props)=>props.margin || "0 0 0 0"};
+    padding : ${(props)=>props.padding || "0 0 0 0"};
     color : var(--color-primary-head);
     font-weight : 600;
+    transition : all 0.3s;
     span{
         font-size : 10px;
     }
@@ -50,12 +57,13 @@ export const RadioDiv = styled.div`
     border : 1px dashed grey;
     border-radius : 0.6rem;
     padding : 6px;
-    margin: 0.9rem 0  1.2rem 0;
+    margin: ${(props)=>props.margin || "0.9rem 0  1.2rem 0"};
+    transition : all 0.3s;
     &:focus-within{
         border : 1px dashed var(--color-primary-head);
     }
 
-    div{
+    .radioInputContainer{
         display : flex;
         justify-content : center;
         align-items : center;
@@ -66,6 +74,8 @@ export const StyledLabelRadio = styled(StyledLabel)`
     margin : 0;
     padding : 0;
     margin-left : 0.2rem;
+    transition : all 0.3s;
+
 `
 
 export const StyledInputRadio = styled.input`
@@ -81,6 +91,7 @@ export const FileDiv = styled(RadioDiv)`
     justify-content: space-evenly;
     align-content: normal;
     flex-direction: column;
+    transition : all 0.3s;
     &:focus-within{
         border : 1px dashed var(--color-primary-head);
     }
@@ -93,9 +104,8 @@ export const FileDiv = styled(RadioDiv)`
     }
 `
 
-
-
 export const StyledFileInput = styled(StyledInput)`
     margin-bottom : 0;
     width : 100%;
+    transition : all 0.3s;
 `

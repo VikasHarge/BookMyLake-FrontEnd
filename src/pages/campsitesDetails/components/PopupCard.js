@@ -52,7 +52,7 @@ const  PopupCard = ({adultNum, setAdultNum, childrenNum, setChildrenNum, setShow
 
 
   return (
-    <StyledPopupCard>
+    <StyledPopupCard bottom="8.5rem" >
       <div className='popupCardTitle' >
         <StyledHeadingDiv fontSize="1rem" >
           Select Number Of Guest

@@ -11,11 +11,11 @@ const DashboardRouter = () => {
   return (
     <>
       <Helmet>
-        <title>Admin | BookMyLake</title>
+        <title>Admin | Pawna | BookMyLake</title>
       </Helmet>
       <Routes>
-        <Route path="" element={<Dashboard />}>
-          <Route path="*" element={<DataDashboard />} />
+        <Route path="/" element={<Dashboard />}>
+          <Route path="dashboard" element={<DataDashboard />} />
           <Route path="campSites" element={<CampSitesDash />} />
           <Route path="bookings" element={<BookingsDash />} />
           <Route path="events" element={<EventDash />} />

@@ -48,3 +48,26 @@ export  const StyledIncriDicriDiv = styled.div`
         height : 12px;
     }
 `
+
+export const StyledCloseOverlyBtn = styled.button`
+    position : absolute;
+    right : 0;
+    top : 0;
+    left : '';
+    bottom : '';
+    transition : 0.3s all;
+    padding : ${(props)=> props.padding || "6px 8px"};
+    border-radius : ${(props)=>props.borderRadius || "0 0.5rem"};
+    border : 2px solid;
+    border-color : ${(props)=>props.backgroundColor || "red"};
+    background-color : ${(props)=>props.backgroundColor || "red"};
+    color : ${(props)=>props.color || "#ffff"};
+    font-size : ${(props)=>props.fontSize || "1rem"};
+    font-weight : 700;
+    cursor: pointer;
+    &:hover{
+        background-color : ${(props)=>props.color || "#ffff"};
+        color : ${(props)=>props.backgroundColor || "red"};
+        border-color : ${(props)=>props.backgroundColor || "#ffff"} !important;
+    }
+`

@@ -24,10 +24,11 @@ const campsiteSlice = createSlice({
     extraReducers : (builder)=>{
         builder.addCase(fetchCampSiteData.pending, (state)=>{
             state.loading = true
+            state.error = '';
         })
         builder.addCase(fetchCampSiteData.fulfilled, (state, action)=>{
             state.loading = false;
-            state.campsiteData = action.payload
+            state.campsiteData = action.payload;
             state.error = '';
         })
         builder.addCase(fetchCampSiteData.rejected, (state, action)=>{

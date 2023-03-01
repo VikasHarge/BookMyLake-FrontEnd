@@ -19,7 +19,7 @@ const CampSiteCard = ({ data }) => {
   return (
     <div className="camp_card_container" >
       <div className="site_card">
-        <img src={camp_a} alt={data.camp_name} className="camp_card_img"></img>
+        <img src={data.images[0].url} alt={data.camp_name} className="camp_card_img"></img>
         <div className="card_rating_div">
           <a className="rating_star" >{<BsStarFill/>}<span>({data.numOfReviews}) Reviews</span></a>
           <a 

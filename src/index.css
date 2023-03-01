@@ -25,6 +25,12 @@
   --color-button-2-hover : #c75000;
   --color-pink : #E62851;
 
+  --color-light-head : #00308818;
+  --color-light-head2 : #00308883;
+  --color-light-primary : #fa640013;
+
+
+
   /* font */
   --font-family-primary : 'Inter', sans-serif;
 
@@ -65,6 +71,8 @@ body{
   height: max-content;
   background-color: white;
 }
+
+/* Scroll */
 
 body::-webkit-scrollbar {
   background-color: #fff;

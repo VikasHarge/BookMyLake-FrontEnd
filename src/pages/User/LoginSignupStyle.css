@@ -1,0 +1,152 @@
+.loginSignupBox{
+    height: max-content;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.login-signup-toggle{
+    display: flex;
+    height: 1rem;
+}
+.login-signup-toggle >p {
+    color: gray;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.login-signup-toggle >p:hover{
+    color: var(--color-primary);
+}
+
+.loginSignupBox > div > button {
+    background-color: var(--color-primary);
+    height: 2px;
+    width: 50%;
+    border: none;
+    transition: all 0.2s;
+}
+
+.loginform,
+.signUpForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto;
+    height: 40vh;
+    transition: all 0.8s;
+}
+
+.loginform{
+    padding-top: 4rem;
+}
+
+.signUpForm{
+    transform: translateY(-100%) translateX(100vmax);
+    /* display: none; */
+}
+
+
+.shiftToLeft{
+    transform: translateX(-100%);
+}
+.shiftToNeutral{
+    transform: translateX(0%);
+}
+.shiftToNeutralForm{
+    transform: translateX(0%) translateY(-100%);
+}
+.shiftToRight{
+    transform: translateX(100%);
+}
+
+
+.loginLableContainer,
+.signupLableContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-primary);
+    padding: 0 0 6px 0;
+    transition: all 0.2s;
+
+}
+
+.StyledLoginSignupContainer{
+    background-image: url("../../media/gallery/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position-x: -10rem;
+    transition: all 0.2s;
+
+}
+
+
+.tabColor{
+    color: var(--color-primary) !important;
+}
+
+
+#registerImg{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.signupAvatarContainer{
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 60px;
+}
+
+#avatarPreview{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+#signupAvatarInput::file-selector-button{
+    border: 1px solid transparent;
+    padding: 8px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+
+}
+
+#signupAvatarInput::file-selector-button:hover{
+    border: 1px solid var(--color-primary);
+    padding: 8px;
+    background-color: #ffff;
+    color: var(--color-primary);
+    border-radius: 0.5rem;
+}
+
+.registerBtn{
+    border: 1px solid transparent;
+    padding: 10px 10px;
+    border-radius: 6px;
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.registerBtn:hover{
+    color: var(--color-secondary-dark);
+    background-color: #fff;
+    border: 1px solid var(--color-secondary-dark);
+}

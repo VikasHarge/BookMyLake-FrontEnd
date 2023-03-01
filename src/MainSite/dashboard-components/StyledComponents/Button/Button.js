@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   margin : 5px;
   background-color: ${(props)=> props.color || "#244789"};
   border-radius: 0.4rem;
-  color: white;
+  color: ${props=>props.fontColor || 'white'};
   font-weight: 600;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
@@ -26,6 +26,7 @@ export const StyledButton = styled.button`
 export const StyledSubmitButton = styled(StyledButton)`
     background-color: green;
     padding: 10px 8px;
+    margin : ${(props)=>props.margin || "0 0 0 0"};
     width : auto;
     &:hover {
         border: 1px solid green;

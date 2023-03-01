@@ -7,17 +7,17 @@ import logo1 from '../media/images/logo5.png'
 
 const StyledLoaderDiv = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
     background-color: #ffff;
-    z-index: 10;
+    z-index: 12;
     display: flex;
     flex-direction : column;
     justify-content : center;
     align-items : center;
     overflow : hidden;
     .dna-wrapper{
-        z-index: 11;
+        z-index: 13;
         background-color: #ffff;
     }
     img {
@@ -26,7 +26,7 @@ const StyledLoaderDiv = styled.div`
     }
 `
 
-const Loader = () => {
+const SmallLoader = () => {
   return (
     <StyledLoaderDiv className="loader">
         <img src={logo1} alt="logo" />
@@ -42,4 +42,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default SmallLoader;

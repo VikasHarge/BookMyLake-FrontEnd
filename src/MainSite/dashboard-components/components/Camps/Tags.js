@@ -59,22 +59,17 @@ const Tags = ({tags, setTags}) => {
 
         if(e.target.value != ""){
             setTags([...tags, e.target.value]);
-            console.log(tags);
             e.target.value = "";
         }
     }
 
     const removeTagHandle = (i)=>{
-        console.log(tags);
 
         const filteres = tags.filter((item, index)=>{
-            console.log(i + "==" + index);
             return i !== index;
         })
 
         setTags(filteres);
-
-        console.log(filteres);
 
     }
 

@@ -3,33 +3,10 @@ import styled from "styled-components";
 import {StyledButton, StyledSubmitButton} from "../../StyledComponents/Button/Button";
 import { StyledInput, StyledLabel, StyledInputTextArea, RadioDiv, StyledLabelRadio, StyledInputRadio, StyledFileInput, FileDiv } from "../../StyledComponents/input/Form";
 import Tags from "./Tags";
-import { ToastContainer } from "react-toastify";
 
 
-const StyledOverly = styled.div`
-  position: fixed; 
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(2px);
-  transition: opacity 500ms;
-  z-index: 999999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 5s ease-in-out;
-`;
-const PopupDiv = styled.div`
-  border-radius: 0.6rem;
-  padding: 20px;
-  background-color: #ffff;
-  width: 55%;
-  height: max-content;
-  position: relative;
-  transition: all 5s ease-in-out;
-`;
+import { StyledOverly, PopupDiv } from "../../StyledComponents/popupOverly/PopupOverly";
+
 
 const HeadingDiv = styled.div`
   display: flex;
@@ -90,6 +67,9 @@ const AddCampPopup = ({ setShowPopUp }) => {
               {/* Camp Name */}
               <StyledLabel
                 for="camp_name"
+                margin="0 0 4px 0"
+                padding="0 0 6px 0"
+
                 >
                   Camp Site Name  <span> (eg. Camp A - Dreamy Nights)</span>
                 </StyledLabel>
@@ -97,11 +77,14 @@ const AddCampPopup = ({ setShowPopUp }) => {
                 type='text' 
                 id="camp_name"
                 name="camp_name"
+                width = "90%"
               />
 
               {/* Max Price */}
               <StyledLabel
                 for="max_price"
+                margin="0 0 4px 0"
+                padding="0 0 6px 0"
                 >
                   Max Price 
                 </StyledLabel>
@@ -110,11 +93,14 @@ const AddCampPopup = ({ setShowPopUp }) => {
                 id="max_price"
                 name="max_price"
                 min={0}
+                width = "90%"
               />
 
               {/* Sale Prise */}
               <StyledLabel
                 for="sale_price"
+                margin="0 0 4px 0"
+                padding="0 0 6px 0"
                 >
                  Sale Price 
                 </StyledLabel>
@@ -123,20 +109,23 @@ const AddCampPopup = ({ setShowPopUp }) => {
                 id="sale_price"
                 name="sale_price"
                 min={0}
+                width = "90%"
               />
 
               {/* Sale Prise */}
               <StyledLabel
                 for="Description"
+                margin="0 0 4px 0"
+                padding="0 0 6px 0"
                 >
                  Description
                 </StyledLabel>
               <StyledInputTextArea 
                 id="Description"
                 name="Description"
+                width = "80%"
               />
 
-              
             </FormInputLeft>
 
             <FormInputLeft>
@@ -147,7 +136,7 @@ const AddCampPopup = ({ setShowPopUp }) => {
 
               {/* Status */}
             <RadioDiv>
-              <div>
+              <div className="radioInputContainer" >
                 <StyledInputRadio 
                   type='radio' 
                   id="active"
@@ -161,7 +150,7 @@ const AddCampPopup = ({ setShowPopUp }) => {
                 </StyledLabelRadio>
               </div>
 
-              <div>
+              <div className="radioInputContainer" >
                 <StyledInputRadio 
                   type='radio' 
                   id="inactive"

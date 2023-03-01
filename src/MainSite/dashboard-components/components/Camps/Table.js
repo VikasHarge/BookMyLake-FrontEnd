@@ -14,22 +14,16 @@ const Table = () => {
 
   const {campsiteData, loading, error, campSiteCount} = useSelector(state => state.campSiteData)
 
-  useEffect(()=>{
-    console.log("------- Dashboard----------");
-    console.log(campsiteData.allCampSites);
-  },[])
-
-
 
   const [data, setData] = useState();
   const [order, setorder] = useState("ASC");
   const [colm, setColm] = useState("");
 
   const sorting = (col)=>{
-    console.log(order);
+    // console.log(order);
     if(order === "ASC"){
       const sorted = [...data].sort((a,b)=>{
-        console.log(a[col]);
+        // console.log(a[col]);
         return a[col] - b[col];
       })
       setData(sorted);
