@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: inherit;
+  color: inherit;
+}
+
 :root{
   /* color palate */
   --color-primary : #FA6500;

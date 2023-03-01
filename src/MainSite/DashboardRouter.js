@@ -6,6 +6,7 @@ import CampSitesDash from "./dashboard-components/components/Camps/CampSitesDash
 import BookingsDash from "./dashboard-components/pages/BookingsDash";
 import EventDash from "./dashboard-components/pages/EventDash";
 import Dashboard from "../MainSite/dashboard-components/Dashboard";
+import PageNotFound from "../utility/PageNotFound";
 
 const DashboardRouter = () => {
   return (
@@ -19,6 +20,7 @@ const DashboardRouter = () => {
           <Route path="campSites" element={<CampSitesDash />} />
           <Route path="bookings" element={<BookingsDash />} />
           <Route path="events" element={<EventDash />} />
+          <Route path='*' element = {<PageNotFound/>}/>
         </Route>
       </Routes>
     </>

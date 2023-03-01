@@ -78,7 +78,7 @@ export const loadUser = createAsyncThunk("userData/loaduser", async () => {
     },
     withCredentials: true,
   }).catch(err =>{
-    toast.error(err.response.data.message)
+    // toast.error(err.response.data.message)
   });
   return data;
 });

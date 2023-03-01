@@ -202,7 +202,6 @@ const LoginSingUp = (props) => {
         >
           <StyledLoginWelcomeImg>
           </StyledLoginWelcomeImg>
-
           <StyledLoginSignupForm>
             <StyledCloseOverlyBtn
               onClick={close}

@@ -12,6 +12,7 @@ import CampsitesDetails from '../pages/campsitesDetails/CampsitesDetails';
 import { useSelector } from 'react-redux';
 import ProtectetRoute from '../utility/ProtectetRoute';
 import Footer from '../components/footer/Footer';
+import PageNotFound from '../utility/PageNotFound';
 
 function App() {
 
@@ -36,9 +37,9 @@ function App() {
                 <Account />
               </ProtectetRoute>} 
           /> 
+          <Route path='*' element={<PageNotFound/>} />
         </Routes> 
         <Footer/>
-
     </>
 
   );
