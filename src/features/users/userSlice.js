@@ -27,6 +27,7 @@ export const loginPost = createAsyncThunk(
           "Access-Control-Allow-Origin": "*",
         },
         withCredentials: true,
+        origin : true,
       }
     ).catch(err =>{
       toast.error(err.response.data.message)
@@ -45,6 +46,7 @@ export const registerPost = createAsyncThunk(
         "Access-Control-Allow-Origin": "*",
       },
       withCredentials: true,
+      origin : true,
     };
 
     const { data } = await axios.post(
@@ -67,6 +69,7 @@ export const logout = createAsyncThunk("userData/logout", async () => {
       "Access-Control-Allow-Origin": "*",
     },
     withCredentials: true,
+    origin : true,
   });
   return data;
 });
@@ -78,6 +81,7 @@ export const loadUser = createAsyncThunk("userData/loaduser", async () => {
       "Access-Control-Allow-Origin": "*",
     },
     withCredentials: true,
+    origin : true,
   }).catch(err =>{
     // toast.error(err.response.data.message)
   });

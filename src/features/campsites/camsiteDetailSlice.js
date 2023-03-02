@@ -11,7 +11,14 @@ const initialState = {
 
 //Api Call for CampSite Details
 export const fetchCampsiteDetails = createAsyncThunk('campsiteDetails/fetchCampsiteDetails', async (campSiteId)=>{
-    const res = await axios.get(`${configEnv.BASE_URL2}/campApi/v1/campSites/${campSiteId}`)
+    const res = await axios.get(`${configEnv.BASE_URL2}/campApi/v1/campSites/${campSiteId}`,
+    {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+        withCredentials: true,
+      }
+    )
     return res.data;
 })
 

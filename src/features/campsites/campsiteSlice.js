@@ -14,7 +14,14 @@ const initialState = {
 //Generating Pending, fullfilled and rejected action types
 export const fetchCampSiteData = createAsyncThunk('campsiteData/fetchCampsiteData', async ()=>{
     const res = await axios
-        .get(`${configEnv.BASE_URL2}/campApi/v1/campSites`);
+        .get(`${configEnv.BASE_URL2}/campApi/v1/campSites`,
+        {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+            withCredentials: true,
+          }
+        );
     return res.data;
 })
 
