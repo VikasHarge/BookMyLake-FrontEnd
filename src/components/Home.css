@@ -242,7 +242,7 @@
 
 .Schedule_container{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     background-color: var(--color-primary-white);
     /* -webkit-box-shadow: inset -3px -32px 300px -80px rgba(0,0,0,0.54);
     -moz-box-shadow: inset -3px -32px 300px -80px rgba(0,0,0,0.54);
@@ -518,7 +518,6 @@
 
 }
 
-
 .photo_banner {
     height: 100%;
     width: 58%;
@@ -526,6 +525,317 @@
     border-radius: 12px;
 }
 
+.svg_container{
+    height: fit-content;
+}
+
+@media screen and (max-width : 600px) {
+
+    .LandingSection{
+        height: 85vh;
+    }
+
+    .landing_container {
+        width: var(--container-width-sm);
+        height: 85vh;
+    }
+    
+    .landing_box{
+        width: 90vw;
+    }
+
+    .landing_logo{
+        width: 7rem;
+    }
+
+    .main_heading {
+        font-size: 2.5rem;
+        margin: 1rem 0 0.5rem 0;
+        text-align: center;
+    }
+    
+    .head_tag {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .head_tag span {
+
+    }
+    .head_tag small {
+        font-size: 0.9rem;
+    }
+
+    .landing_btn {
+        padding: 3rem 1rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 0.7rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+    }
+
+    /* Wave */
+    .wave_container{
+        padding: 0;
+        width: 100%;
+        height: 10%;
+        position: relative;
+    }
+    
+    #waveSection{
+        width: 100%;
+        height: 100%;
+    }
+    
+    #waveSection .wave {
+        position: absolute;
+        background: url(../media/images/wave.png);
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3rem;
+        background-size: 100% 3rem;
+    }
+    
+    #waveSection .wave.wave1{
+        animation: animate 20s linear infinite;
+        z-index: 6;
+        animation-delay: 0s;
+        bottom: 0;
+    }
+    
+    #waveSection .wave.wave2{
+        animation: animate2 13s linear infinite;
+        z-index: 5;
+        opacity: 0.5;
+        animation-delay: -10s;
+        bottom: 10px;
+    }
+    
+    #waveSection .wave.wave3{
+        animation: animate2 10s linear infinite;
+        z-index: 4;
+        opacity: 0.3;
+        animation-delay: -8s;
+        bottom: 15px;
+    }
+    
+    #waveSection .wave.wave4{
+        animation: animate2 8s linear infinite;
+        z-index: 3;
+        opacity: 0.2;
+        animation-delay: -5s;
+        bottom: 20px;
+    }
+    
+    
+    /* Animation Keyframe */
+    
+    @keyframes animate {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 4000px;
+        }
+    }
+    
+    @keyframes animate2 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 4000px;
+        }
+    
+    }
+    
+    @keyframes animate3 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 4000px;
+        }
+    
+    }
+    
+    @keyframes animate4 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 4000px;
+        }
+    
+    }
+    
+
+    /* Info Section */
+    .info_sec{
+        width: 100%;
+        height: fit-content;
+        padding: 1.3rem 0 2.7rem;
+        /* background-color: var(--color-primary-head); */
+        background-color: var(--color-primary-white) ;
+    }
+    
+    .info_container {
+        width: var(--container-width-lg);
+        /* background-color: aquamarine; */
+        height: 100%;    
+        gap: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .info_top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .info_head {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: flex-start;
+    }
+    
+
+
+    .info_img{
+        display: block;
+        width: 100%;
+    }
+    
+    .info_img img{
+        width: inherit;
+        border-radius: 12px;
+    }
+
+    .para_prime{
+        padding: 0 0 1rem 0;
+        font-size: 0.8rem;
+    }
+
+    .info_reverse{
+        flex-direction: column-reverse !important;
+    }
+
+    .add_r_margin{
+        margin: 0;
+    }
+
+    .heading_prime_2{
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .svg_container{
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .heading_prime{
+        font-size: 1.6rem;
+    }
+
+    /* Camp sites */
+    .campsite_section {
+        width: 100%;
+        height: max-content;
+        background-color: var(--color-primary-white);
+    }
+    
+    .campsite_main {
+        width: 90%;
+        height: max-content;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .camp_card_container {
+        min-width: 222px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .site_card {
+        min-width: 222px;
+        height: 450px;
+        background-color: var(--color-primary-white);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .camp_card_img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* transition: var(--transition); */
+        transition: transform 0.75s;
+    
+    }
+
+    /* Photo Section */
+    
+.camp_photo_section {
+    width: 90%;
+    height: 100vh;
+    background-color: var(--color-primary-white);
+    margin: 0 auto;
+}
+
+.camp_photo_container {
+    height: 100%;
+}
+
+
+.photo_sec_container {
+    width: 100%;
+    height: 90%;
+    justify-self: start;
+}
+
+    .photo_sec_inner {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        gap: 12px;
+        flex-direction: column-reverse;
+    }
+
+    .photo_grid {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns:  32% 32% 32%;
+        grid-template-rows: auto auto auto auto;
+        gap: 10px;
+        color: white;
+    }
+
+    .photo_banner{
+        width: 100%;
+    }
+
+}
 
 
 

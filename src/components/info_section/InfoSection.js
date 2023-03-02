@@ -14,7 +14,8 @@ const InfoSection = () => {
             <img src={info.img1}></img>
           </div>
         </div>
-        <div className="info_top">
+
+        <div className="info_top info_reverse">
           <div className="info_img">
             <img src={info.img2}></img>
           </div>

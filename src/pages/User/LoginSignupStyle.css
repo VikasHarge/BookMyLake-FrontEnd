@@ -1,5 +1,5 @@
 .loginSignupBox{
-    height: max-content;
+    max-height: max-content;
     box-sizing: border-box;
     overflow: hidden;
 }

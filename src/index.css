@@ -21,7 +21,7 @@ a{
   --color-secondary : #11DA00;
   --color-secondary-dark : #148d09;
   --color-primary-white : #ffff;
-  --color-primary-black : rgb(0, 0, 0);
+  --color-primary-black : rgb(22, 6, 6);
   --color-hover-gray : #E0E0E0;
   --color-dropdown : #170071;
   --color-button-1 : #244789;
@@ -208,4 +208,12 @@ body::-webkit-scrollbar-thumb {
 
   margin-left: 5rem;
 
+}
+
+
+
+@media screen and (max-width : 600px) {
+  .container {
+    width: var(--container-width-sm);
+  }  
 }

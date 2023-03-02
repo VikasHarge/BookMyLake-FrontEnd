@@ -195,14 +195,21 @@ const LoginSingUp = (props) => {
         (<Loader/>)
         :
         (<StyledOverly>
-      <PopupDiv width="55%" padding="0">
+      <PopupDiv padding="0" width='60%' height='90vh' >
+
         <StyledLoginSignupContainer
             backgroundImg = {banner}
             className="StyledLoginSignupContainer"
+
         >
+
           <StyledLoginWelcomeImg>
+
           </StyledLoginWelcomeImg>
+
+
           <StyledLoginSignupForm>
+
             <StyledCloseOverlyBtn
               onClick={close}
               backgroundColor = "red"
@@ -382,6 +389,8 @@ const LoginSingUp = (props) => {
               </form>
             </div>
           </StyledLoginSignupForm>
+
+
         </StyledLoginSignupContainer>
       </PopupDiv>
     </StyledOverly>)}

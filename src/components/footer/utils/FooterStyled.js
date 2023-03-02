@@ -18,7 +18,7 @@ export const StyledFooterContainer = styled.div`
 export const StyledFooterImg = styled.div`
     width : 100%;
     height : ${(props)=>props.height || 'max-content'};
-    background : url(${props=>props.backgroundImg});
+    background-image : url(${props=>props.backgroundImg});
     border-radius : ${props=>props.borderRadius || '0'};
     background-repeat: no-repeat;
     background-size: 100%;
@@ -39,6 +39,34 @@ export const StyledFooterImg = styled.div`
         /* -webkit-box-shadow: inset 6px -141px 186px 144px rgba(125,41,1,0.98);
     -moz-box-shadow: inset 6px -141px 186px 144px rgba(125,41,1,0.98);
     box-shadow: inset 6px -141px 186px 144px rgba(125,41,1,0.98) */
+
+    @media screen and (max-width : 600px) {
+
+        width : 100%;
+        height : ${(props)=>props.height || 'max-content'};
+        background : url(${props=>props.backgroundImg});
+        border-radius : ${props=>props.borderRadius || '0'};
+        background-repeat: no-repeat;
+        background-size : cover;
+        background-position : center;
+
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+
+
+        .Footerabsolute{
+            width : 100vw;
+            backdrop-filter : blur(10px);
+            -webkit-backdrop-filter : blur(10px);
+            background-color : rgb(0,79,50, 0.8);
+            border-radius : 2rem 2rem 0 0;
+
+        }
+
+
+    }
+
 `
 
 export const StyledFooterSectionContainer = styled.div`
@@ -47,6 +75,12 @@ export const StyledFooterSectionContainer = styled.div`
     padding : ${props=>props.padding || '2rem'};
     display : grid;
     grid-template-columns : repeat(4, 1fr);
+
+    @media screen and (max-width : 600px) {
+        grid-template-columns : 1fr;
+        align-items : center;        
+    }
+
 `
 export const StyledFooterSection = styled.div`
     color : #fff;
@@ -114,6 +148,41 @@ export const StyledFooterSection = styled.div`
         }
     }
 
+    @media screen and (max-width : 600px) {
+
+        .footer_logo{
+            width : 100%;
+            display : flex;
+            flex-direction : column;
+            text-align : center;
+            justify-content : center;
+            align-items : center;
+            img{
+                width :70%;
+            }
+        }
+        .addressP {
+            text-align : center;
+            margin-bottom : 0.5rem;
+            font-size : 0.6rem;
+        }
+        .socialIconsList {
+            margin-bottom : 1.5rem;
+            justify-content : center;
+        }
+
+        .footercontact{
+            width : 100%;
+            display : flex;
+            flex-direction : column;
+            align-items : center;
+            justify-content : center;
+
+        }
+
+        
+    }
+
 `
 export const StyledCopyright = styled.div`
     width : 100%;
@@ -132,6 +201,16 @@ export const StyledCopyright = styled.div`
     small {
         font-size : 1.2rem;
         color : var(--color-pink)
+    }
+    @media screen and (max-width : 600px) {
+        h1 {
+            font-size : 0.7rem;
+        }
+        small {
+        font-size : 1rem;
+        }
+        padding-bottom : 10vh;
+        
     }
 
 `

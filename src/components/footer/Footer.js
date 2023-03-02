@@ -24,16 +24,18 @@ const Footer = () => {
           backgroundImg={banner}
           height="max-content"
         >
-          <div className="container">
+          <div className="container Footerabsolute">
             <StyledFooterSectionContainer padding = '2rem 2rem 0 2rem' >
-              <StyledFooterSection>
-                <img src={bwlogo} />
-                <p className="addressP" >
-                  BookMyLake, <br/>
-                  Lonavala, 
-                  Thakursai, <br/>
-                  Maharashtra 410406
-                </p>
+              <StyledFooterSection >
+                <div className="footer_logo" >
+                  <img src={bwlogo} />
+                  <p className="addressP" >
+                    BookMyLake, <br/>
+                    Lonavala, 
+                    Thakursai, <br/>
+                    Maharashtra 410406
+                  </p>
+                </div>
               </StyledFooterSection>
               <StyledFooterSection>
                 <h1>PAGES</h1>
@@ -59,14 +61,16 @@ const Footer = () => {
                 </ul>
               </StyledFooterSection>
               <StyledFooterSection>
-                <h1>CONTACT US</h1>
-                <p className="socialIconsList" >
-                  <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsInstagram/></a>
-                  <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsFacebook/></a>
-                  <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsTwitter/></a>
-                  <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsWhatsapp/></a>
-                  <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsLinkedin/></a>
-                </p>
+                <div className="footercontact" >
+                  <h1>CONTACT US</h1>
+                  <p className="socialIconsList" >
+                    <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsInstagram/></a>
+                    <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsFacebook/></a>
+                    <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsTwitter/></a>
+                    <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsWhatsapp/></a>
+                    <a href="https://www.linkedin.com/in/vikas-harge/" target='_blank' ><BsLinkedin/></a>
+                  </p>
+                </div>
               </StyledFooterSection>
             </StyledFooterSectionContainer>
             <StyledCopyright>
@@ -79,7 +83,6 @@ const Footer = () => {
             </StyledCopyright>
           </div>
         </StyledFooterImg>
-
       </StyledFooterContainer>
     </StyledFooterComponent>
     </>
