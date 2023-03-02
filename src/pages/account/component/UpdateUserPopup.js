@@ -14,6 +14,7 @@ import {
 import { StyledHeadingDiv, StyledImg, StyledTitleDiv, StyledWhiteContainer } from "../../../StyledComponents/containers/Containers";
 import Loader from "../../../utility/Loader";
 import SmallLoader from "../../../utility/SmallLoader";
+const configEnv = require('../../../utility/config.json')
 
 const HeadingDiv = styled.div`
 display: flex;
@@ -58,7 +59,7 @@ const UpdateUserPopup = ({ userData, setUpdateUserPopup }) => {
               };
 
             const {data} = await axios.put(
-                'http://localhost:4000/userApi/v1/me/update',
+                `${configEnv.BASE_URL2}/userApi/v1/me/update`,
                 {
                     name,
                     email,

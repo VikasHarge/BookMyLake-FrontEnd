@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios'
+const configEnv = require('../../../src/utility/config.json')
 
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
 
 //Api Call for CampSite Details
 export const fetchCampsiteDetails = createAsyncThunk('campsiteDetails/fetchCampsiteDetails', async (campSiteId)=>{
-    const res = await axios.get(`http://localhost:4000/campApi/v1/campSites/${campSiteId}`)
+    const res = await axios.get(`${configEnv.BASE_URL2}/campApi/v1/campSites/${campSiteId}`)
     return res.data;
 })
 

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+const configEnv = require('../../../src/utility/config.json')
 
 
 
@@ -13,7 +14,7 @@ const initialState = {
 //Generating Pending, fullfilled and rejected action types
 export const fetchCampSiteData = createAsyncThunk('campsiteData/fetchCampsiteData', async ()=>{
     const res = await axios
-        .get('http://localhost:4000/campApi/v1/campSites');
+        .get(`${configEnv.BASE_URL2}/campApi/v1/campSites`);
     return res.data;
 })
 

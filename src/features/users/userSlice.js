@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
+const configEnv = require('../../../src/utility/config.json');
 
 const initialState = {
   loading: false,
@@ -18,7 +19,7 @@ export const loginPost = createAsyncThunk(
 
     const config = {};
     const res = await axios.post(
-      "http://localhost:4000/userApi/v1/login",
+      `${configEnv.BASE_URL2}/userApi/v1/login`,
       { email: loginEmail, password: loginPassword },
       {
         headers: {
@@ -47,7 +48,7 @@ export const registerPost = createAsyncThunk(
     };
 
     const { data } = await axios.post(
-      "http://localhost:4000/userApi/v1/register",
+      `${configEnv.BASE_URL2}/userApi/v1/register`,
       registerForm,
       config
     ).catch(err=>{
@@ -61,7 +62,7 @@ export const registerPost = createAsyncThunk(
 
 //Logout Function
 export const logout = createAsyncThunk("userData/logout", async () => {
-  const { data } = await axios.get("http://localhost:4000/userApi/v1/logout", {
+  const { data } = await axios.get(`${configEnv.BASE_URL2}/userApi/v1/logout`, {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
@@ -72,7 +73,7 @@ export const logout = createAsyncThunk("userData/logout", async () => {
 
 //Load User Function
 export const loadUser = createAsyncThunk("userData/loaduser", async () => {
-  const { data } = await axios.get("http://localhost:4000/userApi/v1/me", {
+  const { data } = await axios.get(`${configEnv.BASE_URL2}/userApi/v1/me`, {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
