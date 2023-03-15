@@ -537,44 +537,57 @@
 
     .landing_container {
         width: var(--container-width-sm);
-        height: 85vh;
+        height: 100%;
     }
     
     .landing_box{
-        width: 90vw;
+        width: 90%;
+        height: 65vh;
     }
 
     .landing_logo{
-        width: 7rem;
+        width: 30%;
+    }
+
+    .logo_head > h1 {
+        font-size: 1.8rem;
+    }
+
+    .logo_head > h4 {
+        font-size: 0.75rem;
     }
 
     .main_heading {
-        font-size: 2.5rem;
-        margin: 1rem 0 0.5rem 0;
+        font-size: 2.3rem;
+        margin: 0.5rem 0 0.5rem 0;
         text-align: center;
     }
     
     .head_tag {
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 600;
     }
     
     .head_tag span {
-
+        color: var(--color-primary-head);
     }
     .head_tag small {
         font-size: 0.9rem;
+        color: var(--color-primary);
     }
 
     .landing_btn {
-        padding: 3rem 1rem;
         display: grid;
         grid-template-columns: auto auto auto;
-        gap: 0.7rem;
+        gap: 0.6rem;
+        padding: 0;
+        padding-top: 1rem;
     }
 
     .btn-primary {
-        font-size: 1rem;
+        font-size: 0.7rem;
+        padding: 8px;
+        border-radius: 6px;
     }
 
     /* Wave */

@@ -216,4 +216,19 @@ body::-webkit-scrollbar-thumb {
   .container {
     width: var(--container-width-sm);
   }  
+
+  body{
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
+    /* background: url(../public/banner.jpg) no-repeat center center fixed !important;  */
+    /* background: url(./media/images/pawna_landing_page.png) no-repeat center center fixed;  */
+    /* background: url(./media/images/2.jpg) no-repeat center center fixed;  */
+    background: url(./media/images/1.jpg) no-repeat center center fixed;  
+      /* background-position-y: -300px; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  
+  }
 }

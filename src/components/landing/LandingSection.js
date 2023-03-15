@@ -28,7 +28,7 @@ const LandingSection = () => {
             <h4>Life under the stars.</h4>
           </div>
           <h1 className="main_heading" >THE PAWNA LAKE</h1>
-          <motion.p className="head_tag" transition={{delay:0.2}} {...motionOption}><span> | </span><small>CAMPING</small><span> | </span><small>ADVENTURE</small><span> | </span><small>TRAKING</small><span> | </span><small>EVENTS</small><span> | </span></motion.p>
+          <motion.div className="head_tag" transition={{delay:0.2}} {...motionOption}><span> | </span><small>CAMPING</small><span> | </span><small>ADVENTURE</small><span> | </span><small>TRAKING</small><span> | </span><small>EVENTS</small><span> | </span></motion.div>
           <div className="landing_btn" >
             <Link className="link_btn" to='/bookings' ><button className="btn btn-primary" >Book Now</button></Link>
             <Link className="link_btn" to='/get-quotation' ><button className="btn btn-primary" >Get Quotation</button></Link>
