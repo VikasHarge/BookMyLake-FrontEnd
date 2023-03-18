@@ -37,6 +37,7 @@ function App() {
       ) : (
         <>
           <ToastContainer />
+          <div id='bgImg' />
           <Routes>
             <Route index path="*" element={<MainSite />} />
             <Route

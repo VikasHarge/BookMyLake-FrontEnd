@@ -2,7 +2,9 @@ import React from 'react'
 
 function SvgSchedule() {
   return (
-    <svg width="100%" height="700" viewBox="0 50 1294 708" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg  style={{
+      width : '100%'
+    }} viewBox="0 50 1294 708" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 <g id="Pawna-lake-Info-Desktop 2" clipPath="url(#clip0_77_140)">
 <g id="| Grab Tent">
 <path d="M128.133 201.767V225.688H126.229V201.767H128.133Z" fill="#244789"/>

@@ -4,19 +4,18 @@ import SvgScheduleVertical from './SvgScheduleVertical'
 
 const ScheduleSection = () => {
 
-  const [isMobile, setIsMobile] = useState(false)
-
-  console.log(window.screen.width)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
 
   useEffect(()=>{
-    console.log(window.screen.width)
-    if(window.screen.width < 600){
-      setIsMobile(true);
-    } else {
-      setIsMobile(false)
-    }
-  },[window.screen.width])
+    window.addEventListener('resize', ()=>{
+      setWindowWidth(window.innerWidth)
+    })
+
+    return () => window.removeEventListener("resize", ()=>{
+      setWindowWidth(window.innerHeight)
+    });
+  },[])
 
 
   return (
@@ -27,8 +26,9 @@ const ScheduleSection = () => {
         </div>
         <div className='svg_container' >
           {
-            isMobile ? <SvgScheduleVertical/> : <SvgSchedule/>
+            windowWidth < 600 ? <SvgScheduleVertical windowWidth={windowWidth} /> : <SvgSchedule/>
           }
+
         </div>
       </div>
     </div>

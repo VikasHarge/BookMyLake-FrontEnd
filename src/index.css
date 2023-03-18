@@ -59,16 +59,31 @@ html {
 body{
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-  background: url(./media/images/1.jpg) no-repeat center center fixed; 
+  /* background: url(./media/images/1.jpg) no-repeat center center fixed;  */
   /* background: url(./media/images/pawna_landing_page.png) no-repeat center center fixed;  */
   /* background: url(./media/images/2.jpg) no-repeat center center fixed;  */
   /* background: url(./media/images/1.jpg) no-repeat center center fixed;   */
     /* background-position-y: -300px; */
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
 
+}
+
+#bgImg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+
+  background-image: url(./media/images/1.jpg);
+  background-size: cover;
+  /* Set object-fit property to control image resizing */
+  object-fit: cover;
+  object-position: center center;
 }
 
 .background_white {
@@ -223,13 +238,26 @@ body::-webkit-scrollbar-thumb {
     /* background: url(../public/banner.jpg) no-repeat center center fixed !important;  */
     /* background: url(./media/images/pawna_landing_page.png) no-repeat center center fixed;  */
     /* background: url(./media/images/2.jpg) no-repeat center center fixed;  */
-    background: url(./media/images/1.jpg) no-repeat center center fixed;  
+    /* background: url(./media/images/1.jpg) no-repeat center center fixed;   */
       /* background-position-y: -300px; */
-    -webkit-background-size: cover;
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    background-attachment:scroll !important;
+    background-size: cover; */
+  }
+
+  #bgImg {
+    position: fixed;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   
+    background-image: url(./media/images/1.jpg);
+    background-size: cover;
+    /* Set object-fit property to control image resizing */
+    object-fit: cover;
+    object-position: center center;
   }
 }

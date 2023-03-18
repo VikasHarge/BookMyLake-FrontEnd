@@ -1,4 +1,3 @@
-
 .LandingSection{
     width: 100%;
     height: 100vh;
@@ -526,10 +525,12 @@
 }
 
 .svg_container{
-    height: fit-content;
+    width: 100%;
+    height: fit-content; 
 }
 
 @media screen and (max-width : 600px) {
+
 
     .LandingSection{
         height: 85vh;
@@ -566,14 +567,20 @@
     .head_tag {
         font-size: 0.8rem;
         font-weight: 600;
+        background-color: #ffff;
     }
     
     .head_tag span {
-        color: var(--color-primary-head);
+        /* color: var(--color-primary-head); */
+        color: var(--color-primary);
+        font-style: bold;
+        font-weight: 700;
     }
     .head_tag small {
         font-size: 0.9rem;
-        color: var(--color-primary);
+        /* color: var(--color-primary); */
+        font-style: bold;
+        font-weight: 700;
     }
 
     .landing_btn {
