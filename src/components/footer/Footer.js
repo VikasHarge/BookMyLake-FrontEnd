@@ -12,6 +12,7 @@ import {
 import banner from "../../media/gallery/banner.jpg";
 
 import {BsInstagram , BsFacebook, BsTwitter, BsWhatsapp, BsLinkedin } from 'react-icons/bs'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,7 +42,7 @@ const Footer = () => {
                 <h1>PAGES</h1>
                 <ul>
                   <li><small>-&gt; </small> <p className="linkP" >Home</p></li>
-                  <li><small>-&gt; </small> <p className="linkP" >Gallery</p></li>
+                  <li><Link to='/gallery' ><small>-&gt; </small> <p className="linkP" >Gallery</p></Link></li>
                   <li><small>-&gt; </small> <p className="linkP" >Camp Sites</p></li>
                   <li><small>-&gt; </small> <p className="linkP" >Blogs</p></li>
                   <li><small>-&gt; </small> <p className="linkP" >Bookings</p></li>

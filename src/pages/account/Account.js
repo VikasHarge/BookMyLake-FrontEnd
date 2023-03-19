@@ -34,7 +34,7 @@ const Account = () => {
   }
 
   return <>
-        { <MetaData title={userData.user.role === 'admin'? "Admin | Profile | Pawna | BookMyLake" : "Profile | Pawna | BookMyLake" } ></MetaData>}
+        { <MetaData title={userData?.user?.role === 'admin'? "Admin | Profile | Pawna | BookMyLake" : "Profile | Pawna | BookMyLake" } ></MetaData>}
         {loading ? <Loader /> : 
       <>
       {
@@ -43,6 +43,7 @@ const Account = () => {
 
         <PageNavHeaderDiv>
         </PageNavHeaderDiv>
+        
         <StyledBodyContainer 
           height="100vh"
         >
@@ -54,7 +55,7 @@ const Account = () => {
                 <StyledHeadingDiv
                   fontSize = "1.3rem"
                 >
-                  Hello, {userData.user.name}. Welcome to BookMyLake
+                  Hello, {userData?.user?.name}. Welcome to BookMyLake
                 </StyledHeadingDiv>
               </StyledWhiteContainer>
 
@@ -110,26 +111,26 @@ const Account = () => {
                   width = '12rem'
                   height= '12rem'
                   borderRadius = "6rem"
-                  src={userData.user.avatar.url} 
+                  src={userData?.user.avatar?.url} 
                 />
 
                 <div>
                   <StyledTitleDiv
                   >
                     <p>Full Name</p>
-                    <h1>{userData.user.name}</h1>
+                    <h1>{userData?.user?.name}</h1>
                   </StyledTitleDiv>
                   <StyledTitleDiv
                     fontSizeH1="0.9rem"
                   >
                     <p>Email</p>
-                    <h1>{userData.user.email}</h1>
+                    <h1>{userData?.user?.email}</h1>
                   </StyledTitleDiv>
                   <StyledTitleDiv
                     fontSizeH1="0.9rem"
                   >
                     <p>Phone Number</p>
-                    <h1>{userData.user.phone}</h1>
+                    <h1>{userData?.user?.phone}</h1>
                   </StyledTitleDiv>
                   <StyledTitleDiv
                     fontSizeH1="0.9rem"

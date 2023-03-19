@@ -39,4 +39,9 @@ export const PageNavHeaderDiv = styled.div`
       margin : 0 4px;
     }
   }
+
+  @media screen and (max-width : 600px) {
+
+      height : ${(props) => props.height || "14vh"};    
+  }
 `

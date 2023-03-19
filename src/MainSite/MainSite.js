@@ -1,6 +1,6 @@
 import '../App.css';
 import NavBar from '../components/navigation/NavBar';
-import Gallery from '../pages/Gallery';
+import Gallery from '../pages/gallery/Gallery';
 import Home from '../pages/Home';
 import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';

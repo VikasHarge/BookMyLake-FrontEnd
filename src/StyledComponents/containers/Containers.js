@@ -219,7 +219,7 @@ export const StyledHeadingDiv = styled.div`
     font-weight : 650;
     border-left : 4px solid var(--color-primary);
     padding-left : 0.5rem;
-    margin : 0.3rem 0;
+    margin : ${(props)=> props.margin || '0.3rem 0'};
 `
 
 export const StyledDotedBox = styled.div`

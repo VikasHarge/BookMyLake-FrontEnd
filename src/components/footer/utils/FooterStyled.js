@@ -98,8 +98,16 @@ export const StyledFooterSection = styled.div`
         padding : 1rem;
         font-size : 0.9rem;
     }
+    a {
+        display : flex;
+        flex-direction : row;
+        justify-content : center;
+        align-items : center;
+        gap : 6px;
+    }
     li {
         padding-bottom : 0.5rem;
+        width : fit-content;
         cursor: pointer;
         text-decoration : none;
         display : flex;

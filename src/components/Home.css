@@ -577,7 +577,7 @@
         font-weight: 700;
     }
     .head_tag small {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         /* color: var(--color-primary); */
         font-style: bold;
         font-weight: 700;
@@ -856,6 +856,5 @@
     }
 
 }
-
 
 
