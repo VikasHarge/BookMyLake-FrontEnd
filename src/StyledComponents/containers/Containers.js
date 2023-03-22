@@ -186,12 +186,12 @@ export const StyledPopupCard = styled.div`
     flex-direction : column;
 
 
-    position : absolute;
+    /* position : absolute; */
     width : max-content;
     height : max-content;
     margin-left : 1rem;
-    left : 0;
-    bottom :${(props)=>props.bottom || "3rem"};
+    /* left : 0;
+    bottom :${(props)=>props.bottom || "3rem"}; */
     border-radius : 0.5rem;
     background-color : ${(props)=> props.backgroundColor || "#ffff"};
 

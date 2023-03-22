@@ -53,8 +53,7 @@ const  PopupCard = ({adultNum, showGuestSelector, setAdultNum, childrenNum, setC
 
   return (
     <StyledPopupCard bottom="8.5rem"   >
-      <div className={`popup ${showGuestSelector ? 'open' : 'close' }`} >
-        
+      <div>
       <div className='popupCardTitle' >
         <StyledHeadingDiv fontSize="1rem" >
           Select Number Of Guest

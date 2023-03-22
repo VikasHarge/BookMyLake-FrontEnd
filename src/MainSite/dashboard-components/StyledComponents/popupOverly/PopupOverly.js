@@ -13,7 +13,6 @@ export const StyledOverly = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease-in-out;
     @media screen and (max-width : 600px) {
       justify-content : center;
       align-items : flex-start;
@@ -29,7 +28,7 @@ export const PopupDiv = styled.div`
   width: ${(props)=>props.width || "55%"};
   height: ${(props)=>props.height || "max-content"};
   position: relative;
-  transition: all 0.3s ease-in-out;
+  
   @media screen and (max-width : 600px) {
     width : 90%;
     height : 80vh;

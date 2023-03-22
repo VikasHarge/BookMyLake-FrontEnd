@@ -90,7 +90,7 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
       {loading ? (
         <Loader />
       ) : (
-        <StyledBookingContainer padding="0.5rem 0.6rem">
+        <StyledBookingContainer padding="0.5rem 0.6rem" >  
           <StyledHeadingDiv fontSize="1.2rem">Booking Details</StyledHeadingDiv>
           <StyledWhiteContainer padding="0.5rem">
             <div>
@@ -135,6 +135,9 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
           <StyledBookingInfoDiv
             backgroundColor="#e0e0e06e"
             padding="0.5rem 0.8rem"
+            style={{
+              position: 'relative',
+            }}
           >
             <div className="bookingInfoDiv">
               <div className="bookingElementContainer">
@@ -151,9 +154,18 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
                       Add Guests
                     </StyledButton>
                   </div>
-
-                  {showGuestSelector && (
-                    <div  >
+                  
+                {/* Add Guest Popup */}
+                    <div style={{
+                      position : 'absolute',
+                      top : 0,
+                      left : "auto",
+                      right : "auto",
+                      visibility : showGuestSelector ? 'visible' : 'hidden',
+                      transition : 'all 0.3s ease',
+                      opacity : showGuestSelector? '1' : '0',
+                      scale : showGuestSelector ? '1' : '0.9',
+                    }} >
                       <PopupCard
                       {...{
                         adultNum,
@@ -166,8 +178,9 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
                       }}
                     ></PopupCard>
                     </div>
-                    
-                  )}
+
+
+
                 </div>
                 <div className="selectedInfo">
                   {" "}

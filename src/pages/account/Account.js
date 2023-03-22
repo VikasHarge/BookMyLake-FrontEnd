@@ -37,10 +37,14 @@ const Account = () => {
         { <MetaData title={userData?.user?.role === 'admin'? "Admin | Profile | Pawna | BookMyLake" : "Profile | Pawna | BookMyLake" } ></MetaData>}
         {loading ? <Loader /> : 
       <>
-      {
-        updateUserPopup && <UpdateUserPopup {...{userData, setUpdateUserPopup}} />
-      } 
-
+      <div
+        style={{
+          visibility : updateUserPopup ? "visible" : "hidden",
+        }}
+      >
+        <UpdateUserPopup {...{userData, setUpdateUserPopup, updateUserPopup}} />
+      </div>
+        
         <PageNavHeaderDiv>
         </PageNavHeaderDiv>
         

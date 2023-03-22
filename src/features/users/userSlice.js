@@ -104,7 +104,9 @@ const userSlice = createSlice({
       state.isAuthenticated = true;
       state.userData = action.payload;
       state.error = "";
-      toast.success( `Welcome back, ${action.payload.user.name}`)
+      toast.success( `Welcome back, ${action.payload.user.name}`,{
+        position: "bottom-center",
+      })
     });
     builder.addCase(loginPost.rejected, (state, action) => {
       state.loading = false;

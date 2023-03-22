@@ -23,7 +23,13 @@ const CampSitesDash = () => {
         <Table />
       </div>
       {
-        showPopUp && <AddCampPopup setShowPopUp={setShowPopUp} />
+        <div
+          style={{
+            visibility: showPopUp ? 'visible' : 'hidden',
+          }}
+        >
+          <AddCampPopup {...{setShowPopUp, showPopUp}} />
+        </div>
       }
     </>
   );

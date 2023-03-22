@@ -38,7 +38,7 @@ const FormInputLeft = styled.div`
 
 
 
-const AddCampPopup = ({ setShowPopUp }) => {
+const AddCampPopup = ({ setShowPopUp, showPopUp }) => {
 
   const [tags, setTags] = useState([]);
 
@@ -55,7 +55,15 @@ const AddCampPopup = ({ setShowPopUp }) => {
   return (
     <>
       <StyledOverly>
-        <PopupDiv className="popup">
+        <PopupDiv
+          style={{
+            position : 'absolute',
+            visibility : showPopUp ? 'visible' : 'hidden',
+            opacity : showPopUp ? '1' : '0',
+            scale : showPopUp ? '1' : '0.9',
+            transition: 'all 0.3s ease-in-out',
+          }}
+         >
           <HeadingDiv>
             <h1>Add New Camp Site</h1>
             <StyledButton onClick={() => setShowPopUp(false)} color="red">
