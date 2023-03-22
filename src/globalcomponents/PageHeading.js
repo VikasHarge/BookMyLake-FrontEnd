@@ -28,10 +28,11 @@ const HeadingDiv = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.8rem;
     background-color: #ffff;
     border-radius : 0.4rem;
 
@@ -39,7 +40,7 @@ const HeadingDiv = styled.div`
   h1 {
     text-align: center;
     padding: 0 0.6rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #244789;
     border-left: 0.3rem solid #FA6500;
   }
