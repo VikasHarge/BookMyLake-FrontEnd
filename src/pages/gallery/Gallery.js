@@ -3,16 +3,15 @@ import { useSelector } from "react-redux";
 import MetaData from "../../components/metadata/MetaData";
 import { PageNavHeaderDiv } from "../../StyledComponents/NavHeader/NavHeader";
 import Loader from "../../utility/Loader";
-import { AiOutlineDoubleRight, AiOutlineFieldTime } from "react-icons/ai";
-import { Link, useParams } from "react-router-dom";
+import { AiOutlineDoubleRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import {
   StyledBodyContainer,
-  StyledHeadingDiv,
-  StyledWhiteContainer,
-  StyledContainer,
 } from "../../StyledComponents/containers/Containers";
 import PhotoSwiper from "./component/PhotoSwiper";
 import PageHeading from "../../globalcomponents/PageHeading";
+import PhotoSection from "./component/PhotoSection";
+import CampSiteSection from "../../components/campsite/CampSiteSection";
 
 const Gallery = () => {
   const { loading, userData, isAuthenticated, error } = useSelector(
@@ -34,8 +33,7 @@ const Gallery = () => {
         <Loader />
       ) : (
         <>
-          <PageNavHeaderDiv
-          >
+          <PageNavHeaderDiv>
             <div>
               <p>
                 <Link to="/">Home</Link>
@@ -46,13 +44,28 @@ const Gallery = () => {
               </p>
             </div>
           </PageNavHeaderDiv>
-          <StyledBodyContainer>
-            <div className="container" style={{height : 'fit-content', paddingBottom : '1rem'}} >
-              <PageHeading 
-               >
-                Gallery
-              </PageHeading>
+          <StyledBodyContainer
+          >
+            <div
+              className="container"
+              style={{ height: "fit-content", paddingBottom: "1rem" }}
+            >
+              <PageHeading>Gallery</PageHeading>
               <PhotoSwiper />
+            </div>
+          </StyledBodyContainer>
+
+          <StyledBodyContainer
+            backgroundColor='#ffff'            
+           >
+            <div className="container" style={{
+              height: "fit-content",
+              paddingBottom: "1rem",
+            }} >
+              <PageHeading>
+                Photo Section
+              </PageHeading>
+              <PhotoSection/>
             </div>
           </StyledBodyContainer>
         </>

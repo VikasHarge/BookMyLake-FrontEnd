@@ -29,10 +29,6 @@
   cursor: pointer;
 }
 
-
-
-
-
 @media screen and (max-width : 600px) {  
   .carouselContainer{
     height : 60vh;
@@ -43,4 +39,85 @@
     display: none;
   }
 }
+
+
+
+/* Photo Gallery */
+
+.photo-gal-img{
+  width : 32%;
+  height: 300px;
+  object-fit : cover;
+  border-radius : 0.5rem;
+  cursor : pointer;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.9;
+}
+
+.photo-gal-img:hover{
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: scale(1.01);
+  opacity: 1;
+  z-index: 5;
+}
+
+@media screen and (max-width : 600px) {  
+  .photo-gal-img{
+    width : 48%;
+    height: 250px;
+    object-fit : cover;
+    border-radius : 0.5rem;
+    cursor : pointer;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9;
+  }
+  
+  .photo-gal-img:hover{
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: scale(1.01);
+    opacity: 1;
+    z-index: 5;
+  }
+
+  .popup-img {
+    width: 90%;
+    height: auto !important;
+    object-fit : cover;
+  }
+}
+
+
+
+
+
+
+.img-gal-nav-btn-con{
+  position: absolute;
+  color: #FFFFFF;
+  width: 94%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.img-gal-nav-btn-con p {
+  font-size: 3rem;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.img-gal-nav-btn-con p:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
 

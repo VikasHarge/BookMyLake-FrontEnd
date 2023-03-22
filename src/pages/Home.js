@@ -5,8 +5,7 @@ import InfoSection from '../components/info_section/InfoSection'
 import ScheduleSection from '../components/schedule/ScheduleSection'
 import CampSiteSection from '../components/campsite/CampSiteSection'
 import CampPhotoSection from '../components/campphotosec/CampPhotoSection'
-import { photoObj, imgArr } from '../components/context/PhotoContext'
-import { photoContext } from '../components/context/PhotoContext'
+
 import { Fade } from "react-awesome-reveal";
 import MetaData from '../components/metadata/MetaData'
 import { fetchCampSiteData2 } from '../features/campsites/campsiteSlice'
@@ -35,9 +34,7 @@ const Home = () => {
       
       </Fade>
       <Fade direction='up' triggerOnce={true} fraction={0} >
-      <photoContext.Provider value={{photoObj}}  >
         <CampPhotoSection/>
-      </photoContext.Provider>
       </Fade>
       </div>
 

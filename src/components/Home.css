@@ -277,9 +277,10 @@
 
 .carousel-nav-btn-div {
     position: absolute;
-    top: 50%;
+    top: 40%;
     z-index: 9999;
-    width: 93%;
+    width: calc(100% + 3rem);
+    left: -1.5rem;
     height: fit-content;
     display: flex;
     justify-content: space-between;

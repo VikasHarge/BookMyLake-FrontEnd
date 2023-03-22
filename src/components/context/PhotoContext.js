@@ -24,4 +24,4 @@ export const photoObj = {
     banner : banner,
 }
 
-export const imgArr = [img_1, img_2, img_3, img_4, img_5, img_6]
+export const imgArr = [img_1, img_2, img_3, img_4, img_5, img_6, banner, ]

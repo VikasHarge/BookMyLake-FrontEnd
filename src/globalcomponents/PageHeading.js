@@ -1,28 +1,47 @@
 import React from "react";
+import styled from "styled-components";
 
 const PageHeading = ({ children, ...rest }) => {
   return (
-    <div
-      {...rest}
-      style={{
-        display : 'flex',
-        padding: "1rem",
-        justifyContent : 'center',
-      }}
-    >
-      <h1
-        style={{
-          textAlign: "center",
-          padding: "0 0.8rem",
-          fontSize : '2rem',
-          color :'#244789',
-          borderLeft : '0.4rem solid #FA6500'
-        }}
-      >
-        {children}
-      </h1>
-    </div>
+    <HeadingDiv {...rest}>
+      <h1>{children}</h1>
+    </HeadingDiv>
   );
 };
 
 export default PageHeading;
+
+const HeadingDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffff;
+  border-radius : 1rem;
+
+  h1 {
+    text-align: center;
+    padding: 0 0.8rem;
+    font-size: 2rem;
+    color: #244789;
+    border-left: 0.4rem solid #FA6500;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #ffff;
+    border-radius : 0.4rem;
+
+
+  h1 {
+    text-align: center;
+    padding: 0 0.6rem;
+    font-size: 1rem;
+    color: #244789;
+    border-left: 0.3rem solid #FA6500;
+  }
+  }
+`;

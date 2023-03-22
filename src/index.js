@@ -7,25 +7,24 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./app/store";
 import ScrollToTop from "./utility/ScrollToTop";
-import { PersistGate } from 'redux-persist/integration/react'
-import {persistStore} from "redux-persist";
-
-
+import { photoObj, imgArr } from './components/context/PhotoContext'
+import { photoContext } from './components/context/PhotoContext'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // let persistor = persistStore(store)
 
 root.render(
-
-    <Provider store={store} >
+  <Provider store={store}>
+    <photoContext.Provider value={{ photoObj, imgArr }}>
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         {/* <PersistGate persistor={persistor} > */}
-          <App />
+        <App />
         {/* </PersistGate> */}
       </BrowserRouter>
-    </Provider>
+    </photoContext.Provider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
