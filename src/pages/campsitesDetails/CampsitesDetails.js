@@ -11,7 +11,7 @@ import Carousel from "react-material-ui-carousel";
 import { useSelector, useDispatch } from "react-redux";
 import { imgArr } from "../../components/context/PhotoContext";
 import Loader from "../../utility/Loader";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 import {
   StyledBodyContainer,
@@ -27,48 +27,38 @@ import { StyledOffBtn } from "../../StyledComponents/util/StyledUtils";
 import { fetchCampsiteDetails } from "../../features/campsites/camsiteDetailSlice";
 import BookingPanel from "./components/BookingPanel";
 
-
-
 const CampsitesDetails = () => {
-
-
   const { campsiteId } = useParams();
   const dispatch = useDispatch();
-  const [off, setOff] = useState()
-
+  const [off, setOff] = useState();
 
   const { campsiteDetails, loading, error } = useSelector(
     (state) => state.campSiteDetails
   );
 
-
   useEffect(() => {
-
     dispatch(fetchCampsiteDetails(campsiteId));
-
   }, []);
 
-  useEffect(()=>{
-    if(campsiteDetails){
+  useEffect(() => {
+    if (campsiteDetails) {
       let offPercent = Math.floor(
         100 -
           (campsiteDetails.campSite.sale_price /
             campsiteDetails.campSite.max_price) *
             100
       );
-      setOff(()=>offPercent);
+      setOff(() => offPercent);
     }
-
-  }, [campsiteDetails, off])
-
+  }, [campsiteDetails, off]);
 
   return (
     <Fragment>
-      { loading || campsiteDetails === null ?  (
+      {loading || campsiteDetails === null ? (
         <Loader />
       ) : (
         <>
-          <PageNavHeaderDiv height={"20vh"}>
+          <PageNavHeaderDiv>
             <div>
               <p>
                 <Link to="/">Home</Link>
@@ -104,29 +94,43 @@ const CampsitesDetails = () => {
                     )}
                   </div>
                 </StyledWhiteContainer>
+
                 <StyledDetailContainer>
                   <StyledCarouselContainer>
-                    <Carousel autoPlay={true} animation="slide" duration="600">
-                      {campsiteDetails.campSite.images.map((item, i) => {
-                        return <img key={i} className="img" src={item.url}></img>;
-                      })}
-                    </Carousel>
+                    <div
+                      style={{
+                        paddingBottom : '1rem'
+                      }}
+                    >
+                      <Carousel
+                        stopAutoPlayOnHover={true}
+                        autoPlay={true}
+                        animation="slide"
+                        duration="600"
+                      >
+                        {campsiteDetails.campSite.images.map((item, i) => {
+                          return (
+                            <img key={i} className="img" src={item.url}></img>
+                          );
+                        })}
+                      </Carousel>
+                    </div>
+
                     <StyledInfoDiv padding="0.5rem">
-                      
-                      {campsiteDetails.campSite.utilities && campsiteDetails.campSite.utilities.map((dis, i)=>{
-                        return <StyledWhiteContainer
-                          height="max-content"
-                          alignItems="center"
-                          padding="8px"
-                          key={i}
-                        >
-                          {parse(dis.icon)}
-                          <p className="whiteContainerP">
-                            {dis.para}
-                          </p>
-                        </StyledWhiteContainer>
-                        
-                      })}
+                      {campsiteDetails.campSite.utilities &&
+                        campsiteDetails.campSite.utilities.map((dis, i) => {
+                          return (
+                            <StyledWhiteContainer
+                              height="max-content"
+                              alignItems="center"
+                              padding="8px"
+                              key={i}
+                            >
+                              {parse(dis.icon)}
+                              <p className="whiteContainerP">{dis.para}</p>
+                            </StyledWhiteContainer>
+                          );
+                        })}
 
                       <StyledWhiteContainer
                         height="max-content"
@@ -138,7 +142,7 @@ const CampsitesDetails = () => {
                           Duration 4:00 PM to 11:00 AM
                         </p>
                       </StyledWhiteContainer>
-      
+
                       <StyledWhiteContainer
                         height="max-content"
                         alignItems="center"
@@ -149,7 +153,6 @@ const CampsitesDetails = () => {
                           Overnight Stay in Quality tents
                         </p>
                       </StyledWhiteContainer>
-
 
                       <StyledWhiteContainer
                         height="max-content"
@@ -215,9 +218,7 @@ const CampsitesDetails = () => {
                         <p className="whiteContainerP">
                           Free Parking, Common Toilet
                         </p>
-                      </StyledWhiteContainer> 
-
-                      
+                      </StyledWhiteContainer>
                     </StyledInfoDiv>
                   </StyledCarouselContainer>
                 </StyledDetailContainer>
@@ -230,11 +231,12 @@ const CampsitesDetails = () => {
                   ji
                 </StyledWhiteContainer>
               </div>
-              { <BookingPanel {...{ campsiteDetails, loading, error, off }} /> }
+
+              <BookingPanel {...{ campsiteDetails, loading, error, off }} />
             </StyledContainer>
           </StyledBodyContainer>
         </>
-      )} 
+      )}
     </Fragment>
   );
 };
