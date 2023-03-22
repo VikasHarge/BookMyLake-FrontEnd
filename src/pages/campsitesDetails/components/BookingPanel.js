@@ -153,16 +153,20 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
                   </div>
 
                   {showGuestSelector && (
-                    <PopupCard
+                    <div  >
+                      <PopupCard
                       {...{
                         adultNum,
                         setAdultNum,
                         childrenNum,
                         setChildrenNum,
                         setShowGuestSelector,
+                        showGuestSelector,
                         salePrise,
                       }}
                     ></PopupCard>
+                    </div>
+                    
                   )}
                 </div>
                 <div className="selectedInfo">

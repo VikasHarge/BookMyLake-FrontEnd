@@ -30,7 +30,7 @@ const LeftPhotoGrid = () => {
             </div>
         </div>
         <div className="grid_btn" >
-            <button className="btn2 btn-gallery" ><Link className="link_btn" to='/photos' >View Gallery</Link></button>
+            <button className="btn2 btn-gallery" ><Link className="link_btn" to='/gallery' >View Gallery</Link></button>
         </div>
       </div>
       <div className="photo_grid_7 relative ">

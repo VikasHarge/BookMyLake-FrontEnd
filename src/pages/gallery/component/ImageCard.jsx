@@ -13,7 +13,7 @@ function Card({ imagen }) {
   
   return (
     <animated.div
-      className={Styles.card}
+      className={`${Styles.card}`}
       style={props3}
       onMouseEnter={() => setShown(true)}
       onMouseLeave={() => setShown(false)}

@@ -6,31 +6,6 @@ import Carousel from "./Carousel";
 
 const PhotoSwiper = () => {
 
-  // const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const handlePrevClick = () => {
-  //   setCurrentIndex((prevIndex) => {
-  //     if (prevIndex === 0) {
-  //       return images.length - 1;
-  //     } else {
-  //       return prevIndex - 1;
-  //     }
-  //   });
-  // };
-
-  // const handleNextClick = () => {
-  //   setCurrentIndex((prevIndex) => {
-  //     if (prevIndex === images.length - 1) {
-  //       return 0;
-  //     } else {
-  //       return prevIndex + 1;
-  //     }
-  //   });
-  // };
-  
-
-
-
     const slides = [
       {
         key : 1,
@@ -105,7 +80,7 @@ const PhotoSwiper = () => {
       cards={slides} 
       offset={2}
       showArrows={false}
-      height = "500px"
+      height = "80vh"
       width = "90%"
       margin = "0 auto" 
     />

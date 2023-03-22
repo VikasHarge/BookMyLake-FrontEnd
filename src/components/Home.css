@@ -529,6 +529,28 @@
     height: fit-content; 
 }
 
+
+/* Popup div */
+
+.popup {
+    scale: 1;
+    transition: all 3s ease-in-out;
+}
+
+.popup.close {
+    opacity: 0;
+    scale: 0.9;
+    visibility: hidden;
+}
+
+.popup.open {
+    scale: 1.2;
+    opacity: 1;
+    visibility: hidden;
+
+}
+
+
 @media screen and (max-width : 600px) {
 
 

@@ -2,9 +2,9 @@ import React from 'react'
 import { StyledButton } from '../../../MainSite/dashboard-components/StyledComponents/Button/Button';
 import { StyledHeadingDiv, StyledPopupCard } from '../../../StyledComponents/containers/Containers'
 import { StyledIncriDicriDiv } from '../../../../src/StyledComponents/util/StyledUtils'
+import '../../../components/Home.css'
 
-
-const  PopupCard = ({adultNum, setAdultNum, childrenNum, setChildrenNum, setShowGuestSelector, salePrise}) => {
+const  PopupCard = ({adultNum, showGuestSelector, setAdultNum, childrenNum, setChildrenNum, setShowGuestSelector, salePrise}) => {
 
   const btnStyle = {
     color : "#FA6500",
@@ -52,7 +52,9 @@ const  PopupCard = ({adultNum, setAdultNum, childrenNum, setChildrenNum, setShow
 
 
   return (
-    <StyledPopupCard bottom="8.5rem" >
+    <StyledPopupCard bottom="8.5rem"   >
+      <div className={`popup ${showGuestSelector ? 'open' : 'close' }`} >
+        
       <div className='popupCardTitle' >
         <StyledHeadingDiv fontSize="1rem" >
           Select Number Of Guest
@@ -99,6 +101,7 @@ const  PopupCard = ({adultNum, setAdultNum, childrenNum, setChildrenNum, setShow
                 >-</StyledButton>
             </div>
         </StyledIncriDicriDiv>
+      </div>
       </div>
     </StyledPopupCard>
   )
