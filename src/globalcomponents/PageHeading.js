@@ -25,6 +25,7 @@ const HeadingDiv = styled.div`
     font-size: 2rem;
     color: #244789;
     border-left: 0.4rem solid #FA6500;
+    font-weight : 500;
   }
 
   @media screen and (max-width: 600px) {
