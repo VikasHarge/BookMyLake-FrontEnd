@@ -4,7 +4,6 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  background-color: #ffffff;
 }
 
 .card img {
@@ -20,12 +19,11 @@
 
 @media screen and (max-width : 600px) {
 .card {
-  width: 55vw;
+  width: 52vw;
   height: 50vh;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  background-color: #fff
 }
 
 .card img {

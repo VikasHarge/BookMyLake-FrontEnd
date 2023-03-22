@@ -1,7 +1,7 @@
 import Carousel from "react-spring-3d-carousel";
 import { useState, useEffect } from "react";
 import { config } from "react-spring";
-import './photoswiper.css'
+import "./photoswiper.css";
 
 export default function Carroussel(props) {
   const table = props.cards.map((element, index) => {
@@ -18,12 +18,13 @@ export default function Carroussel(props) {
     setShowArrows(props.showArrows);
   }, [props.offset, props.showArrows]);
 
-
+  useEffect(() => {
+    setGoToSlide(2);
+  }, []);
 
   return (
-    <div
-    className="carouselContainer"
-    >
+    <>
+    <div className="carouselContainer">
       <Carousel
         slides={cards}
         goToSlide={goToSlide}
@@ -32,5 +33,21 @@ export default function Carroussel(props) {
         animationConfig={config.gentle}
       />
     </div>
+    <div className="photo-nav-btn-div">
+        <div
+          className="photo-nav-btn"
+          onClick={()=>setGoToSlide(goToSlide-1)}
+        >
+          &lt;-
+        </div>
+        <div
+          className="photo-nav-btn"
+          onClick={()=>setGoToSlide(goToSlide+1)}
+        >
+          -&gt;
+        </div>
+      </div>
+    </>
+
   );
 }

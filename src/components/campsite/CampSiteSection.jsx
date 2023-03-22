@@ -11,11 +11,25 @@ const CampSiteSection = () => {
     (state) => state.campSiteData
   );
 
+
+
   const dispatch = useDispatch();
 
   useEffect(() => {
      dispatch(fetchCampSiteData());
   }, []);
+
+  const nextBtnHandler = ()=>{
+    const box = document.querySelector('.campsite_main')
+    let width = box.clientWidth;
+    box.scrollLeft = box.scrollLeft + width/2;
+  }
+
+  const prevBtnHandler = ()=>{
+    const box = document.querySelector('.campsite_main')
+    let width = box.clientWidth;
+    box.scrollLeft = box.scrollLeft - width/2;
+  }
 
   return (
     <>
@@ -27,12 +41,29 @@ const CampSiteSection = () => {
             <div>
               <h1 className="heading_prime">Top Camp Sites</h1>
             </div>
+
+            <div className="carousel-nav-btn-div" >
+              <div 
+                className="carousel-nav-btn" 
+                onClick={prevBtnHandler}
+              >&lt;-</div>
+              <div 
+                className="carousel-nav-btn" 
+                onClick={nextBtnHandler}
+              >-&gt;</div>
+            </div>
+  
             <div className="campsite_main">
               {campsiteData.allCampSites &&
                 campsiteData.allCampSites.map((item, i) => {
-                  return <CampSiteCard key={i} data={item} />;
+                  return <>
+                  <CampSiteCard key={i} data={item} />
+                  <CampSiteCard key={i} data={item} />
+                  <CampSiteCard key={i} data={item} />
+                  </>;
                 })}
             </div>
+      
           </div>
         </div>
       )}

@@ -85,7 +85,6 @@ const PhotoSwiper = () => {
       margin = "0 auto" 
     />
     </div>
-
     </>
   )
 }

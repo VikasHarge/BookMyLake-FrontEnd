@@ -47,9 +47,8 @@ const Gallery = () => {
             </div>
           </PageNavHeaderDiv>
           <StyledBodyContainer>
-            <div className="container" >
+            <div className="container" style={{height : 'fit-content', paddingBottom : '1rem'}} >
               <PageHeading 
-                
                >
                 Gallery
               </PageHeading>
