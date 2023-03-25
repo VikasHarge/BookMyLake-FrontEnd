@@ -52,6 +52,9 @@ const CampsitesDetails = () => {
     }
   }, [campsiteDetails, off]);
 
+
+
+
   return (
     <Fragment>
       {loading || campsiteDetails === null ? (
@@ -82,9 +85,13 @@ const CampsitesDetails = () => {
                   alignItems="center"
                   justifyContent="space-between"
                 >
-                  <StyledHeadingDiv fontSize="1.2rem">
+                  <StyledHeadingDiv 
+                    fontSize="1.2rem"
+                    fontSizeMd='1rem'
+                  >
                     {campsiteDetails.campSite.camp_name}
                   </StyledHeadingDiv>
+
                   <div className="reviewsContainer">
                     {campsiteDetails.campSite.ratings < 1 ? null : (
                       <>
@@ -117,8 +124,8 @@ const CampsitesDetails = () => {
                     </div>
 
                     <StyledInfoDiv padding="0.5rem">
-                      {campsiteDetails.campSite.utilities &&
-                        campsiteDetails.campSite.utilities.map((dis, i) => {
+                      {campsiteDetails?.campSite?.utilities &&
+                        campsiteDetails?.campSite?.utilities.map((dis, i) => {
                           return (
                             <StyledWhiteContainer
                               height="max-content"
@@ -232,7 +239,7 @@ const CampsitesDetails = () => {
                 </StyledWhiteContainer>
               </div>
 
-              <BookingPanel {...{ campsiteDetails, loading, error, off }} />
+              <BookingPanel {...{ campsiteDetails, loading, error, off, campsiteId }} />
             </StyledContainer>
           </StyledBodyContainer>
         </>

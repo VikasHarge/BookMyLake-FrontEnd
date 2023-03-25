@@ -24,7 +24,7 @@ import {
   StyledLabelRadio,
 } from "../../../MainSite/dashboard-components/StyledComponents/input/Form";
 
-const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
+const BookingPanel = ({ campsiteDetails, loading, error, off, campsiteId }) => {
   let month = [
     "Jan",
     "Feb",
@@ -52,22 +52,20 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
   const [payingAmount, setPayingAmount] = useState(0)
 
 
-  const salePrise = Math.round(campsiteDetails.campSite.sale_price);
+  const salePrise = Math.round(campsiteDetails?.campSite?.sale_price);
 
   useEffect(() => {
     setTotalPrise((totalPrise) => {
       return (totalPrise =
-        adultNum * campsiteDetails.campSite.sale_price +
-        childrenNum * campsiteDetails.campSite.sale_price);
+        adultNum * campsiteDetails?.campSite?.sale_price +
+        childrenNum * campsiteDetails?.campSite?.sale_price);
     });
   }, [adultNum, campsiteDetails.campSite.sale_price, childrenNum]);
 
   useEffect(()=>{
 
     setAdvancedAMount((advanceAmount)=>{
-
       return advanceAmount = Math.round(totalPrise*0.35)
-
     })
 
   },[totalPrise])
@@ -83,6 +81,31 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
   const changePaymentType = (e) => {
     setPaymentType(e.target.value);
   };
+
+  const hangleBooking = (e) => {
+    e.preventDefault();
+    
+    const bookingModel = {
+      numOfAdult : adultNum,
+      numOfChildrens : childrenNum,
+      packagePrice : totalPrise,
+      bookingDate : value.$d,
+      campSite : campsiteId,
+      paymentInfo : {
+        id : Date.now(),
+        paymentType : paymentType,
+        paidAmount : payingAmount,
+        status : 'paid',
+      },
+      bookingStatus : 'processing',
+    }
+
+    console.log(bookingModel);
+  }
+
+
+
+
 
 
   return (
@@ -277,7 +300,10 @@ const BookingPanel = ({ campsiteDetails, loading, error, off }) => {
                 </StyledBorderDiv>
               )}
 
-              <StyledSubmitButton fontSize="1rem">Book Now</StyledSubmitButton>
+              <StyledSubmitButton 
+                fontSize="1rem"
+                onClick={hangleBooking}
+              >Book Now</StyledSubmitButton>
             </StyledDotedBox>
           </StyledWhiteContainer>
         </StyledBookingContainer>

@@ -7,6 +7,15 @@ export const StyledOffBtn = styled.p`
     font-size : ${(props)=>props.fontSize || "1rem"};
     border-radius : 0.5rem;
     font-weight : 600;
+
+  @media screen and (max-width: 600px) {
+
+    padding : 0.4rem;
+    font-size : ${(props)=>props.fontSize || "0.6rem"};
+    border-radius : 0.4rem;
+    font-weight : 500;
+
+  }
 `
 
 export  const StyledIncriDicriDiv = styled.div`

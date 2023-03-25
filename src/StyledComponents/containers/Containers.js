@@ -101,8 +101,11 @@ export const StyledWhiteContainer = styled.div`
   @media screen and (max-width: 600px) {
     .reviewsContainer {
       display: flex;
-      flex-direction : column;
+      flex-direction: column;
       gap: 6px;
+    }
+    .numOfReviews {
+      font-size: 0.6rem;
     }
   }
 `;
@@ -238,6 +241,11 @@ export const StyledHeadingDiv = styled.div`
   border-left: 4px solid var(--color-primary);
   padding-left: 0.5rem;
   margin: ${(props) => props.margin || "0.3rem 0"};
+
+  @media screen and (min-width: 600px) {
+    font-size: ${(props) => props.fontSizeMd || "1rem"};
+    
+  }
 `;
 
 export const StyledDotedBox = styled.div`
