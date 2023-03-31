@@ -2,8 +2,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://bookmylake.onrender.com" target="blank" >
-    <img src="https://bookmylake.onrender.com/static/media/logo5.aa5bbefe1d9b8ed8b78d.png" alt="Logo" width="500">
+  <a href="https://bookmylake.onrender.com"  target="_blank" >
+    <img src="https://bookmylake.onrender.com/static/media/logo5.aa5bbefe1d9b8ed8b78d.png"  target="_blank" alt="Logo" width="500">
     <br/>  
     <br/>
   </a>
@@ -17,7 +17,7 @@
     <br />
     <a href="https://github.com/VikasHarge/BookMyLake-FrontEnd"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://bookmylake.onrender.com" target="_blank" >View Demo</a>
+    <a href="https://bookmylake.onrender.com"  target="_blank" >View Demo</a>
     ·
     <a href="https://github.com/VikasHarge/BookMyLake-BackEnd">View Backend Repo</a>
   </p>
