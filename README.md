@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://bookmylake.onrender.com" target="_blank" >
+  <a href="https://bookmylake.onrender.com" target="blank" >
     <img src="https://bookmylake.onrender.com/static/media/logo5.aa5bbefe1d9b8ed8b78d.png" alt="Logo" width="500">
     <br/>  
     <br/>
