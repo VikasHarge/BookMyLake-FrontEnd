@@ -45,6 +45,7 @@ const Table = () => {
 
   useEffect(() => {
     dispatch(fetchCampSiteData())
+    setCamps(campsiteData.allCampSites)
   }, [dispatch])
 
 
@@ -67,7 +68,7 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-            {campsiteData.allCampSites && campsiteData.allCampSites.map((site, i)=>{
+            {camps && camps.map((site, i)=>{
                 return <tr key={i} >
                 <td>{site._id.slice(3,5).toUpperCase()}</td>
                 <td><p className="camp_name"><img src={site.images[0].url} className="table_img"/>{site.camp_name}</p></td>
