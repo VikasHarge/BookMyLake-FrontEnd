@@ -19,6 +19,12 @@ export const StyledInput = styled.input`
         border-bottom-color : var(--color-primary);
         background-color : ${(props)=>props.backgroundColorFocus || ""};        
     }
+    @media screen and (max-width: 600px){
+
+    width : ${(props)=>props.md_width || "100%"};
+    height : ${(props)=>props.height || "2rem"};
+        
+    }
 `
 
 export const StyledInputTextArea = styled.textarea`
@@ -33,6 +39,11 @@ export const StyledInputTextArea = styled.textarea`
     transition : all 0.3s;
     &:focus{
         border-bottom : 1.5px dashed var(--color-primary);
+    }
+    @media screen and (max-width: 600px){
+        width : ${(props)=>props.md_width || "100%"};
+        height : ${(props)=>props.height || "2rem"};
+        margin-bottom : 0;
     }
 `
 

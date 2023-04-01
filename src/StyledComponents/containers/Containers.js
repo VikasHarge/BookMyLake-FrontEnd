@@ -99,6 +99,7 @@ export const StyledWhiteContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    
     .reviewsContainer {
       display: flex;
       flex-direction: column;

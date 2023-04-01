@@ -25,6 +25,11 @@ const FromStyled = styled.form`
   background-color : rgba(145, 158, 171, 0.1);
   padding : 1rem 0;
   border-radius : 0.6rem;
+  @media screen and (max-width: 600px) {
+    display : flex;
+    flex-direction : column;
+    height : fit-content
+  }
 `
 const FormInputLeft = styled.div`
   /* background-color : red; */
@@ -56,6 +61,7 @@ const AddCampPopup = ({ setShowPopUp, showPopUp }) => {
     <>
       <StyledOverly>
         <PopupDiv
+          md_height="fit-content"
           style={{
             position : 'absolute',
             visibility : showPopUp ? 'visible' : 'hidden',
@@ -64,6 +70,7 @@ const AddCampPopup = ({ setShowPopUp, showPopUp }) => {
             transition: 'all 0.3s ease-in-out',
           }}
          >
+        
           <HeadingDiv>
             <h1>Add New Camp Site</h1>
             <StyledButton onClick={() => setShowPopUp(false)} color="red">

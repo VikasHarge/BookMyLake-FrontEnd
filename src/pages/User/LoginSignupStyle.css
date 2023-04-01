@@ -1,5 +1,47 @@
+.login_page_container {
+    display: flex;;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;;
+}
+
+.login_signup_container{
+    border-radius: 1rem;
+    padding: 0;
+    background-color :#ffff;
+    width: 55%;
+    min-height: max-content;
+    position: relative;
+}
+
+
+@media screen and (max-width : 600px) {
+    .login_signup_container{
+        border-radius: 1rem;
+        padding: 0;
+        background-color :#ffff;
+        width: 90%;
+        min-height: max-content;
+        position: relative;
+    }
+
+    .loginSignupBox{
+        min-height: fit-content;
+        max-height: 70vh;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+}
+
+
+
 .loginSignupBox{
-    max-height: max-content;
+    min-height: fit-content;
     box-sizing: border-box;
     overflow: hidden;
 }

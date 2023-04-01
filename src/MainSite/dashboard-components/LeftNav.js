@@ -15,8 +15,10 @@ const LeftNav = () => {
       <div className='dash_logo'>
         <img onClick={()=>navigate("/")} src={dashLogo} ></img>
       </div>
+      <div className='leftnav_wrapper' >
       <LeftLink data={leftNavItemsManagement} title={"MANAGEMENT"} />
       <LeftLink data={leftNavItemsUser} title={"USERS"} />
+      </div>
     </div>
   )
 }

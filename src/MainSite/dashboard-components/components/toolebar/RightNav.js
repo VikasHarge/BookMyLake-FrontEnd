@@ -69,9 +69,11 @@ const RightNav = () => {
 
   return (
     <>
-    { loading ? <Loader/> : <header className="header_toolbar">
+    { loading ? <Loader/> : <div className="header_toolbar">
       <div className="dash_heading" >Control Panel <span> {<KeyboardDoubleArrowRightIcon/>} </span> Pawna Lake</div>
+     
       <div className="tool_div">
+        
         <Tooltip title="Change Theme">
           <IconButton onClick={changeTheme}>
             <Badge color="secondary">
@@ -101,6 +103,7 @@ const RightNav = () => {
             <Avatar alt="Vikas Harge" src={adminPhoto} />
           </IconButton>
         </Tooltip>
+
         <Menu
           sx={{ mt: "45px" }}
           id="menu-appbar"
@@ -128,7 +131,7 @@ const RightNav = () => {
 
         </Menu>
       </div>
-    </header> }
+    </div> }
     </>
     
   );

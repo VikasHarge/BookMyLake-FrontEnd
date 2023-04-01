@@ -194,8 +194,8 @@ const LoginSingUp = (props) => {
       {loading ? 
         (<Loader/>)
         :
-        (<StyledOverly>
-      <PopupDiv padding="0" width='60%' height='90vh' >
+        (<div className="login_page_container" >
+      <div className="login_signup_container" >
 
         <StyledLoginSignupContainer
             backgroundImg = {banner}
@@ -392,8 +392,8 @@ const LoginSingUp = (props) => {
 
 
         </StyledLoginSignupContainer>
-      </PopupDiv>
-    </StyledOverly>)}
+      </div>
+    </div>)}
     </Fragment>
   );
 };

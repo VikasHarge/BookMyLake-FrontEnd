@@ -31,6 +31,6 @@ export const PopupDiv = styled.div`
   
   @media screen and (max-width : 600px) {
     width : 90%;
-    height : 80vh;
+    height: ${(props)=>props.md_height || "80vh"};
   }
 `;

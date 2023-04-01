@@ -19,6 +19,10 @@ const Table = () => {
   const [order, setorder] = useState("ASC");
   const [colm, setColm] = useState("");
 
+  const [camps, setCamps] = useState(campsiteData.allCampSites || [])
+
+  const dispatch = useDispatch();
+
   const sorting = (col)=>{
     // console.log(order);
     if(order === "ASC"){
@@ -38,6 +42,10 @@ const Table = () => {
     }
     setColm(col)
   }
+
+  useEffect(() => {
+    dispatch(fetchCampSiteData())
+  }, [dispatch])
 
 
 
