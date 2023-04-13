@@ -3,6 +3,7 @@ import campsiteReducer from '../features/campsites/campsiteSlice'
 import campsiteDetailsReducer from '../features/campsites/camsiteDetailSlice'
 import userReducer from '../features/users/userSlice'
 import userUpdateReducer from '../features/users/updateUserSlice'
+import allBookingsReducer from '../features/booking/bookingSlice'
 
 
 
@@ -10,7 +11,8 @@ const reducer = combineReducers({
     campSiteData : campsiteReducer,
     campSiteDetails : campsiteDetailsReducer,
     userData : userReducer,
-    userUpdate : userUpdateReducer
+    userUpdate : userUpdateReducer,
+    allBookings : allBookingsReducer,
 
 })
 

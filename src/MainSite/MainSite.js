@@ -26,6 +26,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/gallery" element={<Gallery />} />
+        <Route exact path="/photos" element={<Gallery />} />
+        <Route exact path="/videos" element={<Gallery />} />
+        <Route exact path="/vr" element={<Gallery />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/login" element={<AcountLoginSingup />} />
         <Route path="/help" element={<Help />} />

@@ -8,7 +8,7 @@ const NavBottom = () => {
       <ul>
         {navMenu &&
           navMenu.filter((item, index)=>{
-            let ids = [1, 2, 3, 4, 5,6, 7];
+            let ids = [1, 2, 3, 4, 5, 6, 7];
             return ids.includes(item.id)
           }).map((item, index) => {
             return (

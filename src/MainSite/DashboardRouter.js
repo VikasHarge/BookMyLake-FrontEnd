@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Routes, Route } from "react-router-dom";
-import DataDashboard from "./dashboard-components/pages/DataDashboard";
+import DataDashboard from "./dashboard-components/pages/DataDashboard/DataDashboard";
 import CampSitesDash from "./dashboard-components/components/Camps/CampSitesDash";
 import BookingsDash from "./dashboard-components/pages/BookingsDash";
 import EventDash from "./dashboard-components/pages/EventDash";
